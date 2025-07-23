@@ -1,0 +1,82 @@
+[
+	{
+		"id": "street_superstar",
+		"name": "街头巨星"
+	},
+	{
+		"id": "starlight_engine",
+		"name": "星徽引擎"
+	},
+	{
+		"id": "deep_sea_visitor",
+		"name": "深海访客"
+	},
+	{
+		"id": "cannon_rotor",
+		"name": "转轮炮"
+	},
+	{
+		"id": "steel_cushion",
+		"name": "钢铁肉垫"
+	},
+	{
+		"id": "demara_battery_mark_ii",
+		"name": "德玛拉电池 Mark II"
+	},
+	{
+		"id": "slice_of_time",
+		"name": "时间切片"
+	},
+	{
+		"id": "fusion_compiler",
+		"name": "聚变编译器"
+	},
+	{
+		"id": "electro_lip_gloss",
+		"name": "电子唇膏"
+	},
+	{
+		"id": "weeping_gemini",
+		"name": "哭泣双子"
+	},
+	{
+		"id": "bashful_demon",
+		"name": "害羞恶魔"
+	},
+	{
+		"id": "lunar_noviluna",
+		"name": "月相-朔"
+	},
+	{
+		"id": "lunar_decrescent",
+		"name": "月相-残"
+	},
+	{
+		"id": "lunar_pleniluna",
+		"name": "月相-望"
+	},
+	{
+		"id": "the_restrained",
+		"name": "拘缚者"
+	},
+	{
+		"id": "hellfire_gears",
+		"name": "地狱火齿轮"
+	},
+	{
+		"id": "rainforest_gourmet",
+		"name": "雨林美食家"
+	},
+	{
+		"id": "precious_fossilized_core",
+		"name": "珍贵化石核心"
+	},
+	{
+		"id": "peacekeeper_specialized",
+		"name": "维和者-特化型"
+	},
+	{
+		"id": "riot_suppressor_mark_vi",
+		"name": "暴乱镇压者 Mark VI"
+	}
+]

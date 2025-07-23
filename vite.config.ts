@@ -13,15 +13,15 @@ export default defineConfig({
                 author: 'KeyPJ',
                 name: {
                     '': pkg.name,
-                    'zh': '原神规划助手扩展',
+                    'zh': '绝区零规划助手扩展',
                 },
                 description: {
-                    'zh': '个人想偷懒,不想手动在仙灵 - 原神规划助手 手动录入角色及其天赋,于是简单整理一个脚本,利用米游社养成计算器api获取角色信息,直接导入至seelie'
+                    'zh': '绝区零规划助手扩展，自动从米游社获取角色信息并导入至绝区零seelie规划工具'
                 },
                 namespace: 'https://github.com/KeyPJ/seelieEx',
                 version: pkg.version,
-                include: ['https://seelie.inmagi.com/*', "https://seelie.me/*"],
-                grant: ['unsafeWindow', 'GM_xmlhttpRequest', 'GM_openInTab', 'GM_getResourceText', "GM_registerMenuCommand"],
+                include: ["https://zzz.seelie.me/*"],
+                grant: ['unsafeWindow', 'GM.xmlHttpRequest', 'GM_xmlhttpRequest', 'GM_openInTab', 'GM_getResourceText', "GM_registerMenuCommand"],
                 $extra: [
                     ['copyright', '2021, KeyPJ https://github.com/KeyPJ'],
                 ],
@@ -29,8 +29,8 @@ export default defineConfig({
                 contributionURL: 'https://github.com/KeyPJ/seelieEx',
                 connect: ['api-takumi.mihoyo.com', 'public-data-api.mihoyo.com'],
                 resource: {
-                    character: "https://ghproxy.com/https://raw.githubusercontent.com/KeyPJ/seelieEx/main/src/data/character.json",
-                    weapon: "https://ghproxy.com/https://raw.githubusercontent.com/KeyPJ/seelieEx/main/src/data/weapon.json"
+                    zzz_character: "https://ghproxy.com/https://raw.githubusercontent.com/KeyPJ/seelieEx/main/src/data/zzz_character.json",
+                    zzz_weapon: "https://ghproxy.com/https://raw.githubusercontent.com/KeyPJ/seelieEx/main/src/data/zzz_weapon.json"
                 },
                 "run-at": "document-end",
                 homepage: "https://github.com/KeyPJ",

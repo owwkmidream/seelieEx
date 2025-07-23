@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import CharacterGoalTab from "./tabs/CharacterGoalTab";
 import TalentGoalTab from "./tabs/TalentGoalTab";
 import {addCharacter, batchUpdateCharacter, batchUpdateWeapon} from "../seelie";
-import {getAccount, getDetailList, isGlobal} from "../hoyo";
+import {getAccount, getDetailList} from "../hoyo";
 import {Disclosure, Tab} from "@headlessui/react";
 import {ChevronUpIcon} from '@heroicons/react/solid'
 import ToggleSwitch from "./switch/ToggleSwitch";

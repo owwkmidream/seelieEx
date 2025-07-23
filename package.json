@@ -1,5 +1,5 @@
 {
-  "name": "genshinSeelieEx",
+  "name": "zzzSeelieEx",
   "version": "5.3.2",
   "scripts": {
     "dev": "vite ",
@@ -14,16 +14,15 @@
   "devDependencies": {
     "@headlessui/react": "^1.5.0",
     "@heroicons/react": "^1.0.6",
-    "@types/node": "^17.0.23",
+    "@types/node": "^20.10.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@vitejs/plugin-react": "^1.0.0",
+    "@trim21/gm-fetch": "^0.3.0",
     "autoprefixer": "10.4.4",
-    "axios": "^0.27.2",
-    "axios-userscript-adapter": "^0.2.0",
     "postcss": "8.4.12",
     "tailwindcss": "^3.0.24",
-    "typescript": "^4.6.3",
+    "typescript": "^5.3.0",
     "vite": "^4.1.1",
     "vite-plugin-monkey": "^2.11.1"
   }

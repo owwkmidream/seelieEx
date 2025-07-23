@@ -55,37 +55,21 @@ const scrape = async () => {
             }
         })
     })
-    const charactersUrl = 'https://seelie.me/characters'
+    const zzz_charactersUrl = 'https://zzz.seelie.me/characters'
     const selector = '.items-start>.relative'
-    const characters = await getPageData(page, charactersUrl, selector)
-    console.log(characters)
+    const zzz_characters = await getPageData(page, zzz_charactersUrl, selector)
+    console.log(zzz_characters)
 
-    const weaponsUrl = 'https://seelie.me/weapons'
-    const weapons = await getPageData(page, weaponsUrl, selector)
-    console.log(weapons)
-
-
-    const hsr_charactersUrl = 'https://hsr.seelie.me/characters'
-    const hsr_characters = await getPageData(page, hsr_charactersUrl, selector)
-    console.log(hsr_characters)
-
-    const hsr_weaponsUrl = 'https://hsr.seelie.me/weapons'
-    const hsr_weapons = await getPageData(page, hsr_weaponsUrl, selector)
-    console.log(hsr_weapons)
+    const zzz_weaponsUrl = 'https://zzz.seelie.me/weapons'
+    const zzz_weapons = await getPageData(page, zzz_weaponsUrl, selector)
+    console.log(zzz_weapons)
 
     await browser.close()
-    return {characters, weapons, hsr_characters, hsr_weapons}
+    return {zzz_characters, zzz_weapons}
 }
 
 scrape().then((value) => {
-    const {characters, weapons} = value
-    fs.writeFileSync(path.join(__dirname, '../data/character.json'), JSON.stringify(characters, "", "\t"))
-    fs.writeFileSync(path.join(__dirname, '../data/weapon.json'), JSON.stringify(weapons, "", "\t"))
-
-    const {hsr_characters, hsr_weapons} = value
-    fs.writeFileSync(path.join(__dirname, '../data/hsr_character.json'), JSON.stringify(hsr_characters, "", "\t"))
-    fs.writeFileSync(path.join(__dirname, '../data/hsr_weapon.json'), JSON.stringify(hsr_weapons, "", "\t"))
-
-
-}).catch(// err => console.error(err)
-)
+    const {zzz_characters, zzz_weapons} = value
+    fs.writeFileSync(path.join(__dirname, '../data/zzz_character.json'), JSON.stringify(zzz_characters, "", "\t"))
+    fs.writeFileSync(path.join(__dirname, '../data/zzz_weapon.json'), JSON.stringify(zzz_weapons, "", "\t"))
+}).catch(err => console.error(err))
