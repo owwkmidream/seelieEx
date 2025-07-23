@@ -1,1 +1,1428 @@
-[{"type":"character","character":"ellen","cons":0,"current":{"level":60,"asc":5},"goal":{"level":60,"asc":5},"id":1},{"type":"talent","character":"ellen","basic":{"current":12,"goal":12},"dodge":{"current":9,"goal":9},"assist":{"current":9,"goal":9},"special":{"current":12,"goal":12},"chain":{"current":11,"goal":11},"core":{"current":6,"goal":6},"id":2},{"type":"character","character":"soukaku","cons":6,"current":{"level":60,"asc":5},"goal":{"level":60,"asc":5},"id":4},{"type":"talent","character":"soukaku","basic":{"current":1,"goal":1},"dodge":{"current":1,"goal":1},"assist":{"current":5,"goal":5},"special":{"current":11,"goal":11},"chain":{"current":11,"goal":11},"core":{"current":6,"goal":6},"id":5},{"type":"character","character":"lucy","cons":6,"current":{"level":60,"asc":5},"goal":{"level":60,"asc":5},"id":6},{"type":"talent","character":"lucy","basic":{"current":11,"goal":11},"dodge":{"current":6,"goal":6},"assist":{"current":6,"goal":6},"special":{"current":11,"goal":12},"chain":{"current":11,"goal":11},"core":{"current":6,"goal":6},"id":7},{"type":"character","character":"piper","cons":6,"current":{"level":55,"asc":5},"goal":{"level":55,"asc":5},"id":15},{"type":"talent","character":"piper","basic":{"current":1,"goal":9},"dodge":{"current":1,"goal":9},"assist":{"current":7,"goal":9},"special":{"current":11,"goal":11},"chain":{"current":11,"goal":11},"core":{"current":5,"goal":6},"id":16},{"type":"talent","character":"anby","basic":{"current":1,"goal":1},"dodge":{"current":1,"goal":1},"assist":{"current":1,"goal":1},"special":{"current":9,"goal":9},"chain":{"current":1,"goal":1},"core":{"current":0,"goal":0},"id":17},{"type":"character","character":"nekomata","cons":0,"current":{"level":60,"asc":5},"goal":{"level":60,"asc":5},"id":19},{"type":"talent","character":"nekomata","basic":{"current":11,"goal":11},"dodge":{"current":9,"goal":9},"assist":{"current":9,"goal":9},"special":{"current":11,"goal":11},"chain":{"current":11,"goal":11},"core":{"current":6,"goal":6},"id":20},{"type":"weapon","id":21,"character":"ellen","weapon":"gilded_blossom","current":{"level":60,"asc":5},"goal":{"level":60,"asc":5}},{"type":"weapon","id":22,"character":"piper","weapon":"roaring_ride","current":{"level":50,"asc":4},"goal":{"level":50,"asc":4}},{"type":"character","character":"qingyi","cons":0,"current":{"level":60,"asc":5},"goal":{"level":60,"asc":5},"id":23},{"type":"talent","character":"qingyi","basic":{"current":12,"goal":12},"dodge":{"current":9,"goal":9},"assist":{"current":9,"goal":9},"special":{"current":11,"goal":11},"chain":{"current":11,"goal":11},"core":{"current":6,"goal":6},"id":25},{"type":"character","character":"jane","cons":0,"current":{"level":60,"asc":5},"goal":{"level":60,"asc":5},"id":27},{"type":"talent","character":"jane","basic":{"current":12,"goal":12},"dodge":{"current":9,"goal":9},"assist":{"current":6,"goal":6},"special":{"current":6,"goal":6},"chain":{"current":9,"goal":9},"core":{"current":6,"goal":6},"id":28},{"type":"character","character":"seth","cons":6,"current":{"level":60,"asc":5},"goal":{"level":60,"asc":5},"id":30},{"type":"talent","character":"seth","basic":{"current":9,"goal":9},"dodge":{"current":1,"goal":1},"assist":{"current":9,"goal":9},"special":{"current":7,"goal":7},"chain":{"current":1,"goal":1},"core":{"current":6,"goal":6},"id":31},{"type":"weapon","id":32,"character":"seth","weapon":"bunny_band","current":{"level":50,"asc":4,"craft":1},"goal":{"level":50,"asc":4,"craft":1}},{"type":"character","character":"nicole","cons":6,"current":{"level":60,"asc":5},"goal":{"level":60,"asc":5},"id":37},{"type":"talent","character":"nicole","basic":{"current":1,"goal":1},"dodge":{"current":1,"goal":1},"assist":{"current":6,"goal":6},"special":{"current":9,"goal":11},"chain":{"current":10,"goal":11},"core":{"current":6,"goal":6},"id":38},{"type":"weapon","id":39,"character":"nicole","weapon":"the_vault","current":{"level":50,"asc":4,"craft":1},"goal":{"level":50,"asc":4,"craft":1}},{"type":"character","character":"miyabi","cons":0,"current":{"level":60,"asc":5},"goal":{"level":60,"asc":5},"id":41},{"type":"weapon","id":42,"character":"miyabi","weapon":"hailstorm_shrine","current":{"level":60,"asc":5,"craft":1},"goal":{"level":60,"asc":5,"craft":1}},{"type":"talent","character":"miyabi","basic":{"current":11,"goal":11},"dodge":{"current":9,"goal":9},"assist":{"current":9,"goal":9},"special":{"current":11,"goal":11},"chain":{"current":11,"goal":11},"core":{"current":6,"goal":6},"id":43},{"type":"weapon","id":44,"character":"qingyi","weapon":"hellfire_gears","current":{"level":60,"asc":5,"craft":1},"goal":{"level":60,"asc":5,"craft":1}},{"type":"weapon","id":45,"character":"soukaku","weapon":"bashful_demon","current":{"level":50,"asc":4,"craft":0},"goal":{"level":50,"asc":4,"craft":1}},{"type":"weapon","id":46,"character":"lucy","weapon":"kaboom_the_cannon","current":{"level":50,"asc":4,"craft":1},"goal":{"level":50,"asc":4,"craft":1}},{"type":"character","character":"grace","cons":0,"current":{"level":60,"asc":5},"goal":{"level":60,"asc":5},"id":47},{"type":"talent","character":"grace","basic":{"current":1,"goal":11},"dodge":{"current":1,"goal":7},"assist":{"current":1,"goal":7},"special":{"current":1,"goal":11},"chain":{"current":1,"goal":11},"core":{"current":0,"goal":6},"id":48},{"type":"character","character":"lycaon","cons":0,"current":{"level":55,"asc":5},"goal":{"level":55,"asc":5},"id":50},{"type":"talent","character":"lycaon","basic":{"current":11,"goal":11},"dodge":{"current":7,"goal":7},"assist":{"current":9,"goal":9},"special":{"current":11,"goal":11},"chain":{"current":11,"goal":11},"core":{"current":5,"goal":5},"id":51},{"type":"weapon","id":52,"character":"lycaon","weapon":"hellfire_gears","current":{"level":50,"asc":5,"craft":1},"goal":{"level":50,"asc":5,"craft":1}},{"type":"character","character":"harumasa","cons":1,"current":{"level":60,"asc":5},"goal":{"level":60,"asc":5},"id":53},{"type":"talent","character":"harumasa","basic":{"current":9,"goal":9},"dodge":{"current":12,"goal":12},"assist":{"current":7,"goal":7},"special":{"current":11,"goal":11},"chain":{"current":11,"goal":11},"core":{"current":6,"goal":6},"id":54},{"type":"weapon","id":55,"character":"harumasa","weapon":"marcato_desire","current":{"level":60,"asc":5,"craft":1},"goal":{"level":60,"asc":5,"craft":1}},{"type":"character","character":"anby","cons":6,"current":{"level":50,"asc":4,"text":"1"},"goal":{"level":50,"asc":5,"text":"1"},"id":56},{"type":"character","character":"astra_yao","cons":0,"current":{"level":60,"asc":5},"goal":{"level":60,"asc":5},"id":57},{"type":"talent","character":"astra_yao","basic":{"current":7,"goal":7},"dodge":{"current":1,"goal":1},"assist":{"current":1,"goal":1},"special":{"current":12,"goal":12},"chain":{"current":11,"goal":11},"core":{"current":6,"goal":6},"id":58},{"type":"weapon","id":59,"character":"astra_yao","weapon":"kaboom_the_cannon","current":{"level":50,"asc":5,"craft":0},"goal":{"level":50,"asc":5,"craft":1}},{"type":"character","character":"evelyn","cons":0,"current":{"level":60,"asc":5},"goal":{"level":60,"asc":5},"id":60},{"type":"talent","character":"evelyn","basic":{"current":10,"goal":10},"dodge":{"current":9,"goal":9},"assist":{"current":7,"goal":7},"special":{"current":11,"goal":11},"chain":{"current":11,"goal":11},"core":{"current":6,"goal":6},"id":61},{"type":"weapon","id":62,"character":"evelyn","weapon":"starlight_engine","current":{"level":60,"asc":5,"craft":5},"goal":{"level":60,"asc":5,"craft":5}},{"type":"character","character":"trigger","cons":0,"current":{"level":60,"asc":5},"goal":{"level":60,"asc":5},"id":64},{"type":"talent","character":"trigger","basic":{"current":11,"goal":11},"dodge":{"current":1,"goal":1},"assist":{"current":11,"goal":11},"special":{"current":11,"goal":11},"chain":{"current":11,"goal":11},"core":{"current":6,"goal":6},"id":65},{"type":"character","character":"burnice","cons":0,"current":{"level":60,"asc":5},"goal":{"level":60,"asc":5},"id":68},{"type":"talent","character":"burnice","basic":{"current":9,"goal":9},"dodge":{"current":1,"goal":1},"assist":{"current":1,"goal":1},"special":{"current":11,"goal":11},"chain":{"current":11,"goal":11},"core":{"current":6,"goal":6},"id":69},{"type":"character","character":"vivian","cons":0,"current":{"level":60,"asc":5},"goal":{"level":60,"asc":5},"id":70},{"type":"talent","character":"vivian","basic":{"current":11,"goal":11},"dodge":{"current":7,"goal":7},"assist":{"current":9,"goal":9},"special":{"current":11,"goal":11},"chain":{"current":11,"goal":11},"core":{"current":6,"goal":6},"id":71},{"type":"character","character":"corin","cons":0,"current":{"level":20,"asc":1},"goal":{"level":50,"asc":5},"id":72},{"type":"character","character":"billy","cons":0,"current":{"level":10,"asc":1},"goal":{"level":50,"asc":5},"id":73},{"type":"character","character":"anton","cons":0,"current":{"level":10,"asc":1},"goal":{"level":50,"asc":5},"id":74},{"type":"character","character":"ben","cons":0,"current":{"level":10,"asc":1},"goal":{"level":50,"asc":5},"id":75},{"type":"character","character":"pulchra","cons":0,"current":{"level":1,"asc":0},"goal":{"level":50,"asc":5},"id":76},{"type":"weapon","id":77,"character":"grace","weapon":"weeping_gemini","current":{"level":0,"asc":0,"craft":0},"goal":{"level":null,"asc":-1,"craft":1}},{"type":"weapon","id":78,"character":"vivian","weapon":"weeping_gemini","current":{"level":60,"asc":5,"craft":5},"goal":{"level":60,"asc":5,"craft":5}},{"type":"character","character":"zhu_yuan","cons":0,"current":{"level":60,"asc":5},"goal":{"level":60,"asc":5},"id":79},{"type":"talent","character":"zhu_yuan","basic":{"current":12,"goal":12},"dodge":{"current":9,"goal":9},"assist":{"current":7,"goal":7},"special":{"current":11,"goal":11},"chain":{"current":11,"goal":11},"core":{"current":6,"goal":6},"id":80},{"type":"talent","character":"rina","basic":{"current":1,"goal":1},"dodge":{"current":1,"goal":1},"assist":{"current":1,"goal":1},"special":{"current":11,"goal":11},"chain":{"current":1,"goal":1},"core":{"current":6,"goal":6},"id":81},{"type":"character","character":"rina","cons":0,"current":{"level":60,"asc":5},"goal":{"level":60,"asc":5},"id":82},{"type":"character","character":"yixuan","cons":0,"current":{"level":60,"asc":5},"goal":{"level":60,"asc":5},"id":83},{"type":"talent","character":"yixuan","basic":{"current":11,"goal":11},"dodge":{"current":9,"goal":9},"assist":{"current":9,"goal":9},"special":{"current":11,"goal":11},"chain":{"current":11,"goal":11},"core":{"current":6,"goal":6},"id":84},{"type":"character","character":"pan_yinhu","cons":5,"current":{"level":60,"asc":5},"goal":{"level":60,"asc":5},"id":85},{"type":"talent","character":"pan_yinhu","basic":{"current":1,"goal":1},"dodge":{"current":1,"goal":1},"assist":{"current":8,"goal":8},"special":{"current":11,"goal":11},"chain":{"current":11,"goal":11},"core":{"current":6,"goal":6},"id":86},{"type":"character","character":"ju_fufu","cons":0,"current":{"level":60,"asc":5},"goal":{"level":60,"asc":5},"id":87},{"type":"talent","character":"ju_fufu","basic":{"current":1,"goal":1},"dodge":{"current":1,"goal":1},"assist":{"current":1,"goal":1},"special":{"current":11,"goal":11},"chain":{"current":11,"goal":11},"core":{"current":6,"goal":6},"id":88},{"type":"character","character":"alice","cons":0,"current":{"level":1,"asc":0},"goal":{"level":60,"asc":5},"id":93},{"type":"talent","character":"alice","basic":{"current":1,"goal":11},"dodge":{"current":1,"goal":9},"assist":{"current":1,"goal":9},"special":{"current":1,"goal":11},"chain":{"current":1,"goal":11},"core":{"current":0,"goal":6},"id":94},{"type":"character","character":"yuzuha","cons":0,"current":{"level":60,"asc":5},"goal":{"level":60,"asc":5},"id":95},{"type":"talent","character":"yuzuha","basic":{"current":11,"goal":11},"dodge":{"current":1,"goal":1},"assist":{"current":9,"goal":9},"special":{"current":12,"goal":12},"chain":{"current":12,"goal":12},"core":{"current":6,"goal":6},"id":96},{"type":"weapon","id":97,"character":"jane","weapon":"weeping_gemini","current":{"level":60,"asc":5,"craft":5},"goal":{"level":60,"asc":5,"craft":5}}]
+[
+    {
+        "type": "character",
+        "character": "ellen",
+        "cons": 0,
+        "current": {
+            "level": 60,
+            "asc": 5
+        },
+        "goal": {
+            "level": 60,
+            "asc": 5
+        },
+        "id": 1
+    },
+    {
+        "type": "talent",
+        "character": "ellen",
+        "basic": {
+            "current": 12,
+            "goal": 12
+        },
+        "dodge": {
+            "current": 9,
+            "goal": 9
+        },
+        "assist": {
+            "current": 9,
+            "goal": 9
+        },
+        "special": {
+            "current": 12,
+            "goal": 12
+        },
+        "chain": {
+            "current": 11,
+            "goal": 11
+        },
+        "core": {
+            "current": 6,
+            "goal": 6
+        },
+        "id": 2
+    },
+    {
+        "type": "character",
+        "character": "soukaku",
+        "cons": 6,
+        "current": {
+            "level": 60,
+            "asc": 5
+        },
+        "goal": {
+            "level": 60,
+            "asc": 5
+        },
+        "id": 4
+    },
+    {
+        "type": "talent",
+        "character": "soukaku",
+        "basic": {
+            "current": 1,
+            "goal": 1
+        },
+        "dodge": {
+            "current": 1,
+            "goal": 1
+        },
+        "assist": {
+            "current": 5,
+            "goal": 5
+        },
+        "special": {
+            "current": 11,
+            "goal": 11
+        },
+        "chain": {
+            "current": 11,
+            "goal": 11
+        },
+        "core": {
+            "current": 6,
+            "goal": 6
+        },
+        "id": 5
+    },
+    {
+        "type": "character",
+        "character": "lucy",
+        "cons": 6,
+        "current": {
+            "level": 60,
+            "asc": 5
+        },
+        "goal": {
+            "level": 60,
+            "asc": 5
+        },
+        "id": 6
+    },
+    {
+        "type": "talent",
+        "character": "lucy",
+        "basic": {
+            "current": 11,
+            "goal": 11
+        },
+        "dodge": {
+            "current": 6,
+            "goal": 6
+        },
+        "assist": {
+            "current": 6,
+            "goal": 6
+        },
+        "special": {
+            "current": 11,
+            "goal": 12
+        },
+        "chain": {
+            "current": 11,
+            "goal": 11
+        },
+        "core": {
+            "current": 6,
+            "goal": 6
+        },
+        "id": 7
+    },
+    {
+        "type": "character",
+        "character": "piper",
+        "cons": 6,
+        "current": {
+            "level": 55,
+            "asc": 5
+        },
+        "goal": {
+            "level": 55,
+            "asc": 5
+        },
+        "id": 15
+    },
+    {
+        "type": "talent",
+        "character": "piper",
+        "basic": {
+            "current": 1,
+            "goal": 9
+        },
+        "dodge": {
+            "current": 1,
+            "goal": 9
+        },
+        "assist": {
+            "current": 7,
+            "goal": 9
+        },
+        "special": {
+            "current": 11,
+            "goal": 11
+        },
+        "chain": {
+            "current": 11,
+            "goal": 11
+        },
+        "core": {
+            "current": 5,
+            "goal": 6
+        },
+        "id": 16
+    },
+    {
+        "type": "talent",
+        "character": "anby",
+        "basic": {
+            "current": 1,
+            "goal": 1
+        },
+        "dodge": {
+            "current": 1,
+            "goal": 1
+        },
+        "assist": {
+            "current": 1,
+            "goal": 1
+        },
+        "special": {
+            "current": 9,
+            "goal": 9
+        },
+        "chain": {
+            "current": 1,
+            "goal": 1
+        },
+        "core": {
+            "current": 0,
+            "goal": 0
+        },
+        "id": 17
+    },
+    {
+        "type": "character",
+        "character": "nekomata",
+        "cons": 0,
+        "current": {
+            "level": 60,
+            "asc": 5
+        },
+        "goal": {
+            "level": 60,
+            "asc": 5
+        },
+        "id": 19
+    },
+    {
+        "type": "talent",
+        "character": "nekomata",
+        "basic": {
+            "current": 11,
+            "goal": 11
+        },
+        "dodge": {
+            "current": 9,
+            "goal": 9
+        },
+        "assist": {
+            "current": 9,
+            "goal": 9
+        },
+        "special": {
+            "current": 11,
+            "goal": 11
+        },
+        "chain": {
+            "current": 11,
+            "goal": 11
+        },
+        "core": {
+            "current": 6,
+            "goal": 6
+        },
+        "id": 20
+    },
+    {
+        "type": "weapon",
+        "id": 21,
+        "character": "ellen",
+        "weapon": "gilded_blossom",
+        "current": {
+            "level": 60,
+            "asc": 5
+        },
+        "goal": {
+            "level": 60,
+            "asc": 5
+        }
+    },
+    {
+        "type": "weapon",
+        "id": 22,
+        "character": "piper",
+        "weapon": "roaring_ride",
+        "current": {
+            "level": 50,
+            "asc": 4
+        },
+        "goal": {
+            "level": 50,
+            "asc": 4
+        }
+    },
+    {
+        "type": "character",
+        "character": "qingyi",
+        "cons": 0,
+        "current": {
+            "level": 60,
+            "asc": 5
+        },
+        "goal": {
+            "level": 60,
+            "asc": 5
+        },
+        "id": 23
+    },
+    {
+        "type": "talent",
+        "character": "qingyi",
+        "basic": {
+            "current": 12,
+            "goal": 12
+        },
+        "dodge": {
+            "current": 9,
+            "goal": 9
+        },
+        "assist": {
+            "current": 9,
+            "goal": 9
+        },
+        "special": {
+            "current": 11,
+            "goal": 11
+        },
+        "chain": {
+            "current": 11,
+            "goal": 11
+        },
+        "core": {
+            "current": 6,
+            "goal": 6
+        },
+        "id": 25
+    },
+    {
+        "type": "character",
+        "character": "jane",
+        "cons": 0,
+        "current": {
+            "level": 60,
+            "asc": 5
+        },
+        "goal": {
+            "level": 60,
+            "asc": 5
+        },
+        "id": 27
+    },
+    {
+        "type": "talent",
+        "character": "jane",
+        "basic": {
+            "current": 12,
+            "goal": 12
+        },
+        "dodge": {
+            "current": 9,
+            "goal": 9
+        },
+        "assist": {
+            "current": 6,
+            "goal": 6
+        },
+        "special": {
+            "current": 6,
+            "goal": 6
+        },
+        "chain": {
+            "current": 9,
+            "goal": 9
+        },
+        "core": {
+            "current": 6,
+            "goal": 6
+        },
+        "id": 28
+    },
+    {
+        "type": "character",
+        "character": "seth",
+        "cons": 6,
+        "current": {
+            "level": 60,
+            "asc": 5
+        },
+        "goal": {
+            "level": 60,
+            "asc": 5
+        },
+        "id": 30
+    },
+    {
+        "type": "talent",
+        "character": "seth",
+        "basic": {
+            "current": 9,
+            "goal": 9
+        },
+        "dodge": {
+            "current": 1,
+            "goal": 1
+        },
+        "assist": {
+            "current": 9,
+            "goal": 9
+        },
+        "special": {
+            "current": 7,
+            "goal": 7
+        },
+        "chain": {
+            "current": 1,
+            "goal": 1
+        },
+        "core": {
+            "current": 6,
+            "goal": 6
+        },
+        "id": 31
+    },
+    {
+        "type": "weapon",
+        "id": 32,
+        "character": "seth",
+        "weapon": "bunny_band",
+        "current": {
+            "level": 50,
+            "asc": 4,
+            "craft": 1
+        },
+        "goal": {
+            "level": 50,
+            "asc": 4,
+            "craft": 1
+        }
+    },
+    {
+        "type": "character",
+        "character": "nicole",
+        "cons": 6,
+        "current": {
+            "level": 60,
+            "asc": 5
+        },
+        "goal": {
+            "level": 60,
+            "asc": 5
+        },
+        "id": 37
+    },
+    {
+        "type": "talent",
+        "character": "nicole",
+        "basic": {
+            "current": 1,
+            "goal": 1
+        },
+        "dodge": {
+            "current": 1,
+            "goal": 1
+        },
+        "assist": {
+            "current": 6,
+            "goal": 6
+        },
+        "special": {
+            "current": 9,
+            "goal": 11
+        },
+        "chain": {
+            "current": 10,
+            "goal": 11
+        },
+        "core": {
+            "current": 6,
+            "goal": 6
+        },
+        "id": 38
+    },
+    {
+        "type": "weapon",
+        "id": 39,
+        "character": "nicole",
+        "weapon": "the_vault",
+        "current": {
+            "level": 50,
+            "asc": 4,
+            "craft": 1
+        },
+        "goal": {
+            "level": 50,
+            "asc": 4,
+            "craft": 1
+        }
+    },
+    {
+        "type": "character",
+        "character": "miyabi",
+        "cons": 0,
+        "current": {
+            "level": 60,
+            "asc": 5
+        },
+        "goal": {
+            "level": 60,
+            "asc": 5
+        },
+        "id": 41
+    },
+    {
+        "type": "weapon",
+        "id": 42,
+        "character": "miyabi",
+        "weapon": "hailstorm_shrine",
+        "current": {
+            "level": 60,
+            "asc": 5,
+            "craft": 1
+        },
+        "goal": {
+            "level": 60,
+            "asc": 5,
+            "craft": 1
+        }
+    },
+    {
+        "type": "talent",
+        "character": "miyabi",
+        "basic": {
+            "current": 11,
+            "goal": 11
+        },
+        "dodge": {
+            "current": 9,
+            "goal": 9
+        },
+        "assist": {
+            "current": 9,
+            "goal": 9
+        },
+        "special": {
+            "current": 11,
+            "goal": 11
+        },
+        "chain": {
+            "current": 11,
+            "goal": 11
+        },
+        "core": {
+            "current": 6,
+            "goal": 6
+        },
+        "id": 43
+    },
+    {
+        "type": "weapon",
+        "id": 44,
+        "character": "qingyi",
+        "weapon": "hellfire_gears",
+        "current": {
+            "level": 60,
+            "asc": 5,
+            "craft": 1
+        },
+        "goal": {
+            "level": 60,
+            "asc": 5,
+            "craft": 1
+        }
+    },
+    {
+        "type": "weapon",
+        "id": 45,
+        "character": "soukaku",
+        "weapon": "bashful_demon",
+        "current": {
+            "level": 50,
+            "asc": 4,
+            "craft": 0
+        },
+        "goal": {
+            "level": 50,
+            "asc": 4,
+            "craft": 1
+        }
+    },
+    {
+        "type": "weapon",
+        "id": 46,
+        "character": "lucy",
+        "weapon": "kaboom_the_cannon",
+        "current": {
+            "level": 50,
+            "asc": 4,
+            "craft": 1
+        },
+        "goal": {
+            "level": 50,
+            "asc": 4,
+            "craft": 1
+        }
+    },
+    {
+        "type": "character",
+        "character": "grace",
+        "cons": 0,
+        "current": {
+            "level": 60,
+            "asc": 5
+        },
+        "goal": {
+            "level": 60,
+            "asc": 5
+        },
+        "id": 47
+    },
+    {
+        "type": "talent",
+        "character": "grace",
+        "basic": {
+            "current": 1,
+            "goal": 11
+        },
+        "dodge": {
+            "current": 1,
+            "goal": 7
+        },
+        "assist": {
+            "current": 1,
+            "goal": 7
+        },
+        "special": {
+            "current": 1,
+            "goal": 11
+        },
+        "chain": {
+            "current": 1,
+            "goal": 11
+        },
+        "core": {
+            "current": 0,
+            "goal": 6
+        },
+        "id": 48
+    },
+    {
+        "type": "character",
+        "character": "lycaon",
+        "cons": 0,
+        "current": {
+            "level": 55,
+            "asc": 5
+        },
+        "goal": {
+            "level": 55,
+            "asc": 5
+        },
+        "id": 50
+    },
+    {
+        "type": "talent",
+        "character": "lycaon",
+        "basic": {
+            "current": 11,
+            "goal": 11
+        },
+        "dodge": {
+            "current": 7,
+            "goal": 7
+        },
+        "assist": {
+            "current": 9,
+            "goal": 9
+        },
+        "special": {
+            "current": 11,
+            "goal": 11
+        },
+        "chain": {
+            "current": 11,
+            "goal": 11
+        },
+        "core": {
+            "current": 5,
+            "goal": 5
+        },
+        "id": 51
+    },
+    {
+        "type": "weapon",
+        "id": 52,
+        "character": "lycaon",
+        "weapon": "hellfire_gears",
+        "current": {
+            "level": 50,
+            "asc": 5,
+            "craft": 1
+        },
+        "goal": {
+            "level": 50,
+            "asc": 5,
+            "craft": 1
+        }
+    },
+    {
+        "type": "character",
+        "character": "harumasa",
+        "cons": 1,
+        "current": {
+            "level": 60,
+            "asc": 5
+        },
+        "goal": {
+            "level": 60,
+            "asc": 5
+        },
+        "id": 53
+    },
+    {
+        "type": "talent",
+        "character": "harumasa",
+        "basic": {
+            "current": 9,
+            "goal": 9
+        },
+        "dodge": {
+            "current": 12,
+            "goal": 12
+        },
+        "assist": {
+            "current": 7,
+            "goal": 7
+        },
+        "special": {
+            "current": 11,
+            "goal": 11
+        },
+        "chain": {
+            "current": 11,
+            "goal": 11
+        },
+        "core": {
+            "current": 6,
+            "goal": 6
+        },
+        "id": 54
+    },
+    {
+        "type": "weapon",
+        "id": 55,
+        "character": "harumasa",
+        "weapon": "marcato_desire",
+        "current": {
+            "level": 60,
+            "asc": 5,
+            "craft": 1
+        },
+        "goal": {
+            "level": 60,
+            "asc": 5,
+            "craft": 1
+        }
+    },
+    {
+        "type": "character",
+        "character": "anby",
+        "cons": 6,
+        "current": {
+            "level": 50,
+            "asc": 4,
+            "text": "1"
+        },
+        "goal": {
+            "level": 50,
+            "asc": 5,
+            "text": "1"
+        },
+        "id": 56
+    },
+    {
+        "type": "character",
+        "character": "astra_yao",
+        "cons": 0,
+        "current": {
+            "level": 60,
+            "asc": 5
+        },
+        "goal": {
+            "level": 60,
+            "asc": 5
+        },
+        "id": 57
+    },
+    {
+        "type": "talent",
+        "character": "astra_yao",
+        "basic": {
+            "current": 7,
+            "goal": 7
+        },
+        "dodge": {
+            "current": 1,
+            "goal": 1
+        },
+        "assist": {
+            "current": 1,
+            "goal": 1
+        },
+        "special": {
+            "current": 12,
+            "goal": 12
+        },
+        "chain": {
+            "current": 11,
+            "goal": 11
+        },
+        "core": {
+            "current": 6,
+            "goal": 6
+        },
+        "id": 58
+    },
+    {
+        "type": "weapon",
+        "id": 59,
+        "character": "astra_yao",
+        "weapon": "kaboom_the_cannon",
+        "current": {
+            "level": 50,
+            "asc": 5,
+            "craft": 0
+        },
+        "goal": {
+            "level": 50,
+            "asc": 5,
+            "craft": 1
+        }
+    },
+    {
+        "type": "character",
+        "character": "evelyn",
+        "cons": 0,
+        "current": {
+            "level": 60,
+            "asc": 5
+        },
+        "goal": {
+            "level": 60,
+            "asc": 5
+        },
+        "id": 60
+    },
+    {
+        "type": "talent",
+        "character": "evelyn",
+        "basic": {
+            "current": 10,
+            "goal": 10
+        },
+        "dodge": {
+            "current": 9,
+            "goal": 9
+        },
+        "assist": {
+            "current": 7,
+            "goal": 7
+        },
+        "special": {
+            "current": 11,
+            "goal": 11
+        },
+        "chain": {
+            "current": 11,
+            "goal": 11
+        },
+        "core": {
+            "current": 6,
+            "goal": 6
+        },
+        "id": 61
+    },
+    {
+        "type": "weapon",
+        "id": 62,
+        "character": "evelyn",
+        "weapon": "starlight_engine",
+        "current": {
+            "level": 60,
+            "asc": 5,
+            "craft": 5
+        },
+        "goal": {
+            "level": 60,
+            "asc": 5,
+            "craft": 5
+        }
+    },
+    {
+        "type": "character",
+        "character": "trigger",
+        "cons": 0,
+        "current": {
+            "level": 60,
+            "asc": 5
+        },
+        "goal": {
+            "level": 60,
+            "asc": 5
+        },
+        "id": 64
+    },
+    {
+        "type": "talent",
+        "character": "trigger",
+        "basic": {
+            "current": 11,
+            "goal": 11
+        },
+        "dodge": {
+            "current": 1,
+            "goal": 1
+        },
+        "assist": {
+            "current": 11,
+            "goal": 11
+        },
+        "special": {
+            "current": 11,
+            "goal": 11
+        },
+        "chain": {
+            "current": 11,
+            "goal": 11
+        },
+        "core": {
+            "current": 6,
+            "goal": 6
+        },
+        "id": 65
+    },
+    {
+        "type": "character",
+        "character": "burnice",
+        "cons": 0,
+        "current": {
+            "level": 60,
+            "asc": 5
+        },
+        "goal": {
+            "level": 60,
+            "asc": 5
+        },
+        "id": 68
+    },
+    {
+        "type": "talent",
+        "character": "burnice",
+        "basic": {
+            "current": 9,
+            "goal": 9
+        },
+        "dodge": {
+            "current": 1,
+            "goal": 1
+        },
+        "assist": {
+            "current": 1,
+            "goal": 1
+        },
+        "special": {
+            "current": 11,
+            "goal": 11
+        },
+        "chain": {
+            "current": 11,
+            "goal": 11
+        },
+        "core": {
+            "current": 6,
+            "goal": 6
+        },
+        "id": 69
+    },
+    {
+        "type": "character",
+        "character": "vivian",
+        "cons": 0,
+        "current": {
+            "level": 60,
+            "asc": 5
+        },
+        "goal": {
+            "level": 60,
+            "asc": 5
+        },
+        "id": 70
+    },
+    {
+        "type": "talent",
+        "character": "vivian",
+        "basic": {
+            "current": 11,
+            "goal": 11
+        },
+        "dodge": {
+            "current": 7,
+            "goal": 7
+        },
+        "assist": {
+            "current": 9,
+            "goal": 9
+        },
+        "special": {
+            "current": 11,
+            "goal": 11
+        },
+        "chain": {
+            "current": 11,
+            "goal": 11
+        },
+        "core": {
+            "current": 6,
+            "goal": 6
+        },
+        "id": 71
+    },
+    {
+        "type": "character",
+        "character": "corin",
+        "cons": 0,
+        "current": {
+            "level": 20,
+            "asc": 1
+        },
+        "goal": {
+            "level": 50,
+            "asc": 5
+        },
+        "id": 72
+    },
+    {
+        "type": "character",
+        "character": "billy",
+        "cons": 0,
+        "current": {
+            "level": 10,
+            "asc": 1
+        },
+        "goal": {
+            "level": 50,
+            "asc": 5
+        },
+        "id": 73
+    },
+    {
+        "type": "character",
+        "character": "anton",
+        "cons": 0,
+        "current": {
+            "level": 10,
+            "asc": 1
+        },
+        "goal": {
+            "level": 50,
+            "asc": 5
+        },
+        "id": 74
+    },
+    {
+        "type": "character",
+        "character": "ben",
+        "cons": 0,
+        "current": {
+            "level": 10,
+            "asc": 1
+        },
+        "goal": {
+            "level": 50,
+            "asc": 5
+        },
+        "id": 75
+    },
+    {
+        "type": "character",
+        "character": "pulchra",
+        "cons": 0,
+        "current": {
+            "level": 1,
+            "asc": 0
+        },
+        "goal": {
+            "level": 50,
+            "asc": 5
+        },
+        "id": 76
+    },
+    {
+        "type": "weapon",
+        "id": 77,
+        "character": "grace",
+        "weapon": "weeping_gemini",
+        "current": {
+            "level": 0,
+            "asc": 0,
+            "craft": 0
+        },
+        "goal": {
+            "level": null,
+            "asc": -1,
+            "craft": 1
+        }
+    },
+    {
+        "type": "weapon",
+        "id": 78,
+        "character": "vivian",
+        "weapon": "weeping_gemini",
+        "current": {
+            "level": 60,
+            "asc": 5,
+            "craft": 5
+        },
+        "goal": {
+            "level": 60,
+            "asc": 5,
+            "craft": 5
+        }
+    },
+    {
+        "type": "character",
+        "character": "zhu_yuan",
+        "cons": 0,
+        "current": {
+            "level": 60,
+            "asc": 5
+        },
+        "goal": {
+            "level": 60,
+            "asc": 5
+        },
+        "id": 79
+    },
+    {
+        "type": "talent",
+        "character": "zhu_yuan",
+        "basic": {
+            "current": 12,
+            "goal": 12
+        },
+        "dodge": {
+            "current": 9,
+            "goal": 9
+        },
+        "assist": {
+            "current": 7,
+            "goal": 7
+        },
+        "special": {
+            "current": 11,
+            "goal": 11
+        },
+        "chain": {
+            "current": 11,
+            "goal": 11
+        },
+        "core": {
+            "current": 6,
+            "goal": 6
+        },
+        "id": 80
+    },
+    {
+        "type": "talent",
+        "character": "rina",
+        "basic": {
+            "current": 1,
+            "goal": 1
+        },
+        "dodge": {
+            "current": 1,
+            "goal": 1
+        },
+        "assist": {
+            "current": 1,
+            "goal": 1
+        },
+        "special": {
+            "current": 11,
+            "goal": 11
+        },
+        "chain": {
+            "current": 1,
+            "goal": 1
+        },
+        "core": {
+            "current": 6,
+            "goal": 6
+        },
+        "id": 81
+    },
+    {
+        "type": "character",
+        "character": "rina",
+        "cons": 0,
+        "current": {
+            "level": 60,
+            "asc": 5
+        },
+        "goal": {
+            "level": 60,
+            "asc": 5
+        },
+        "id": 82
+    },
+    {
+        "type": "character",
+        "character": "yixuan",
+        "cons": 0,
+        "current": {
+            "level": 60,
+            "asc": 5
+        },
+        "goal": {
+            "level": 60,
+            "asc": 5
+        },
+        "id": 83
+    },
+    {
+        "type": "talent",
+        "character": "yixuan",
+        "basic": {
+            "current": 11,
+            "goal": 11
+        },
+        "dodge": {
+            "current": 9,
+            "goal": 9
+        },
+        "assist": {
+            "current": 9,
+            "goal": 9
+        },
+        "special": {
+            "current": 11,
+            "goal": 11
+        },
+        "chain": {
+            "current": 11,
+            "goal": 11
+        },
+        "core": {
+            "current": 6,
+            "goal": 6
+        },
+        "id": 84
+    },
+    {
+        "type": "character",
+        "character": "pan_yinhu",
+        "cons": 5,
+        "current": {
+            "level": 60,
+            "asc": 5
+        },
+        "goal": {
+            "level": 60,
+            "asc": 5
+        },
+        "id": 85
+    },
+    {
+        "type": "talent",
+        "character": "pan_yinhu",
+        "basic": {
+            "current": 1,
+            "goal": 1
+        },
+        "dodge": {
+            "current": 1,
+            "goal": 1
+        },
+        "assist": {
+            "current": 8,
+            "goal": 8
+        },
+        "special": {
+            "current": 11,
+            "goal": 11
+        },
+        "chain": {
+            "current": 11,
+            "goal": 11
+        },
+        "core": {
+            "current": 6,
+            "goal": 6
+        },
+        "id": 86
+    },
+    {
+        "type": "character",
+        "character": "ju_fufu",
+        "cons": 0,
+        "current": {
+            "level": 60,
+            "asc": 5
+        },
+        "goal": {
+            "level": 60,
+            "asc": 5
+        },
+        "id": 87
+    },
+    {
+        "type": "talent",
+        "character": "ju_fufu",
+        "basic": {
+            "current": 1,
+            "goal": 1
+        },
+        "dodge": {
+            "current": 1,
+            "goal": 1
+        },
+        "assist": {
+            "current": 1,
+            "goal": 1
+        },
+        "special": {
+            "current": 11,
+            "goal": 11
+        },
+        "chain": {
+            "current": 11,
+            "goal": 11
+        },
+        "core": {
+            "current": 6,
+            "goal": 6
+        },
+        "id": 88
+    },
+    {
+        "type": "character",
+        "character": "alice",
+        "cons": 0,
+        "current": {
+            "level": 1,
+            "asc": 0
+        },
+        "goal": {
+            "level": 60,
+            "asc": 5
+        },
+        "id": 93
+    },
+    {
+        "type": "talent",
+        "character": "alice",
+        "basic": {
+            "current": 1,
+            "goal": 11
+        },
+        "dodge": {
+            "current": 1,
+            "goal": 9
+        },
+        "assist": {
+            "current": 1,
+            "goal": 9
+        },
+        "special": {
+            "current": 1,
+            "goal": 11
+        },
+        "chain": {
+            "current": 1,
+            "goal": 11
+        },
+        "core": {
+            "current": 0,
+            "goal": 6
+        },
+        "id": 94
+    },
+    {
+        "type": "character",
+        "character": "yuzuha",
+        "cons": 0,
+        "current": {
+            "level": 60,
+            "asc": 5
+        },
+        "goal": {
+            "level": 60,
+            "asc": 5
+        },
+        "id": 95
+    },
+    {
+        "type": "talent",
+        "character": "yuzuha",
+        "basic": {
+            "current": 11,
+            "goal": 11
+        },
+        "dodge": {
+            "current": 1,
+            "goal": 1
+        },
+        "assist": {
+            "current": 9,
+            "goal": 9
+        },
+        "special": {
+            "current": 12,
+            "goal": 12
+        },
+        "chain": {
+            "current": 12,
+            "goal": 12
+        },
+        "core": {
+            "current": 6,
+            "goal": 6
+        },
+        "id": 96
+    },
+    {
+        "type": "weapon",
+        "id": 97,
+        "character": "jane",
+        "weapon": "weeping_gemini",
+        "current": {
+            "level": 60,
+            "asc": 5,
+            "craft": 5
+        },
+        "goal": {
+            "level": 60,
+            "asc": 5,
+            "craft": 5
+        }
+    }
+]
