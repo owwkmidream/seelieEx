@@ -12,17 +12,17 @@ async function getPageData(page, url, selector) {
 
     await page.click('#main button')
 
-    const list = await page.$$eval(selector, relativeList => relativeList.map(relative => {
-        const scr = relative?.firstElementChild?.firstElementChild?.src
-        const match = scr?.match(/(\/([\w-]*)\.png)/)
-        const id = match && match[2]
-        const name = relative.innerText
-            .replace("NEW", "")
-            .replace("SOON", "")
-            .replace("Custom", "")
-            .replace("自定义", "")
-            .replace("即将上线", "")
-            .replaceAll("\n", "")
+    const list = await page.$$eval(selector, buttonList => buttonList.map(button => {
+        // 从 img 标签的 src 属性中提取 ID
+        const imgElement = button.querySelector('.item-image img')
+        const src = imgElement?.src
+        const match = src?.match(/\/([\w-]*)\.png/)
+        const id = match && match[1]
+        
+        // 从 p.item-name 中获取名称
+        const nameElement = button.querySelector('.item-name')
+        const name = nameElement?.textContent?.trim()
+        
         if (!id || !name) {
             return null
         }
@@ -56,7 +56,7 @@ const scrape = async () => {
         })
     })
     const zzz_charactersUrl = 'https://zzz.seelie.me/characters'
-    const selector = '.items-start>.relative'
+    const selector = '.items-start>.item-wrapper'
     const zzz_characters = await getPageData(page, zzz_charactersUrl, selector)
     console.log(zzz_characters)
 
