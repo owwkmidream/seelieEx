@@ -133,7 +133,7 @@ const addTalentGoal = (talentCharacter: string, skill_list: mihoyo.Skill[]) => {
     const ids = totalGoal.map(g => g.id);
     const id = Math.max(...ids) + 1 || 1;
     const talentIdx = totalGoal.findIndex(g => g.type == "talent" && g.character == talentCharacter);
-    const [normalCurrent, skillCurrent, burstCurrent] = skill_list.filter(a => a.max_level == 10).sort().map(a => a.level_current)
+    const [normalCurrent, skillCurrent, burstCurrent] = skill_list.filter(a => a.level >= 1).sort().map(a => a.level)
     let talentGoal: TalentGoal;
     if (talentIdx < 0) {
         talentGoal = {
@@ -456,28 +456,30 @@ export function addZZZCharacter(
 export function addCharacter(characterDataEx: CharacterDataEx) {
 
     const {character, skill_list, weapon} = characterDataEx;
-    const {name} = character;
+    const characterName = character.name_mi18n || character.full_name_mi18n;
 
     //{"type":"character","character":"traveler","current":{"level":70,"asc":4,"text":"70"},"goal":{"level":70,"asc":4,"text":"70"},"id":1},
     //{"type":"weapon","weapon":""deathmatch"","current":{"level":70,"asc":4,"text":"70"},"goal":{"level":70,"asc":4,"text":"70"},"id":1},
     //{"type":"talent","character":"traveler_geo","c3":false,"c5":false,"normal":{"current":1,"goal":6},"skill":{"current":1,"goal":6},"burst":{"current":1,"goal":6},"id":2}
 
     if (weapon) {
-        const {name, level_current: weaponLeveL} = weapon;
+        const {name, level: weaponLeveL} = weapon;
         const weaponId = getWeaponId(name);
         if (weaponId) {
             addCharacterGoal(weaponLeveL, weaponId, name, "weapon");
         }
     }
-    const {level_current: characterLevel} = character;
-    const characterId = getCharacterId(name);
+    const {level: characterLevel} = character;
+    const characterId = getCharacterId(characterName);
     if (!characterId) {
         return
     }
-    addCharacterGoal(characterLevel, characterId, name, "character");
+    addCharacterGoal(characterLevel, characterId, characterName, "character");
 
     // 绝区零没有旅行者角色，直接使用角色ID
-    addTalentGoal(characterId, skill_list);
+    if (skill_list) {
+        addTalentGoal(characterId, skill_list);
+    }
 
 }
 

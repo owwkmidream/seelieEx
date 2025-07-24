@@ -40,7 +40,7 @@ function ExDialog() {
     const getAccountList = () => {
         getAccount().then(
             res => {
-                const roles: mihoyo.Role[] = res;
+                const roles: mihoyo.Role[] = res || [];
                 setAccountList(roles)
                 roles.length > 0 && setCurrentAccount(roles[0])
             }

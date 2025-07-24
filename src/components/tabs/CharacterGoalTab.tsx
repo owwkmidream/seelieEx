@@ -47,7 +47,7 @@ function CharacterGoalTab(props: IProps) {
                     selected={characterLevelGoal}
                     setSelected={setCharacterLevelGoal}
                     optionList={optionList}
-                    show={characterStatus => `${characterStatus.text.replace("A", "破")}`}
+                    show={characterStatus => `${characterStatus.text?.replace("A", "破") || ""}`}
                 />
             </div>
         </div>
