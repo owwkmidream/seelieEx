@@ -480,14 +480,19 @@ export function addZZZCharacterFromAPI(avatarDetail: mihoyo.AvatarDetail) {
 
     // 2. 处理天赋数据
     if (skills && skills.length > 0) {
-        // 绝区零技能类型映射：0:普攻, 1:特殊技, 2:闪避, 3:连携技, 5:核心被动, 6:支援技
-        const skillMap: { [key: number]: keyof ZZZTalentInput } = {
-            0: 'basic',    // 普攻
-            1: 'dodge',  // 特殊技
-            2: 'assist',    // 闪避
-            3: 'special',    // 连携技
-            4: 'chain',     // 核心被动
-            5: 'core'    // 支援技
+        // 根据技能标题关键字判断技能类型
+        const getSkillType = (skill: any): keyof ZZZTalentInput | null => {
+            // 检查技能的items数组中的title
+            for (const item of skill.items || []) {
+                const title = item.title || '';
+                if (title.includes('普通攻击') || title.includes('普攻')) return 'basic';
+                if (title.includes('闪避')) return 'dodge';
+                if (title.includes('支援')) return 'assist';
+                if (title.includes('特殊技')) return 'special';
+                if (title.includes('连携技')) return 'chain';
+                if (title.includes('核心被动')) return 'core';
+            }
+            return null;
         };
 
         const talentInput: ZZZTalentInput = {
@@ -502,7 +507,7 @@ export function addZZZCharacterFromAPI(avatarDetail: mihoyo.AvatarDetail) {
 
         // 根据API返回的技能数据设置等级
         skills.forEach(skill => {
-            const skillKey = skillMap[skill.skill_type];
+            const skillKey = getSkillType(skill);
             if (skillKey) {
                 // 处理核心技等级
                 if (skillKey === 'core') (talentInput as any)[skillKey] = skill.level - 1;
