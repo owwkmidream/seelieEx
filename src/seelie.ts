@@ -113,10 +113,9 @@ const addGoal = (data: any) => {
     } else if (data.character && data.type === "talent") {
         index = findGoalIndex(goals, data.type, data.character);
     } else if (data.weapon && data.character && data.type === "weapon") {
-        // 武器需要同时匹配武器ID和角色ID
+        // 武器只匹配角色ID（一个角色只能有一个武器）
         index = goals.findIndex(g =>
             g.type === "weapon" &&
-            (g as ZZZWeaponGoal).weapon === data.weapon &&
             (g as ZZZWeaponGoal).character === data.character
         );
     } else if (data.id) {
@@ -345,19 +344,16 @@ const addZZZWeaponGoal = (weaponData: ZZZWeaponInput) => {
     const totalGoal: Goal[] = getTotalGoal();
     const id = generateNewId(totalGoal);
 
-    // 查找现有的武器目标 - 根据武器ID和角色ID查找
+    // 查找现有的武器目标 - 只根据角色ID查找（一个角色只能有一个武器）
     const existingWeaponIdx = totalGoal.findIndex(
-        g => g.type === "weapon" &&
-            (g as ZZZWeaponGoal).weapon === weaponData.weaponId &&
-            (g as ZZZWeaponGoal).character === weaponData.characterId
+        g => g.type === "weapon" && (g as ZZZWeaponGoal).character === weaponData.characterId
     );
 
     // 创建武器状态对象
     const currentStatus: seelie.ZZZWeaponStatus = {
         level: weaponData.level,
         asc: weaponData.asc,
-        craft: weaponData.craft,
-        // text: weaponData.level.toString()
+        craft: weaponData.craft
     };
 
     let weaponGoal: ZZZWeaponGoal;
@@ -373,20 +369,32 @@ const addZZZWeaponGoal = (weaponData: ZZZWeaponInput) => {
             id
         };
     } else {
-        // 更新现有的武器目标 - 只更新current，保留用户设置的goal
+        // 角色换武器 - 完全替换武器信息，但保留原有的ID和用户设置的goal（如果新武器状态更低）
         const existingWeapon = totalGoal[existingWeaponIdx] as ZZZWeaponGoal;
-        const { goal: existingGoal } = existingWeapon;
+        const { goal: existingGoal, id: existingId } = existingWeapon;
 
-        // 如果当前状态比目标更高，则更新目标
-        const shouldUpdateGoal = currentStatus.level > existingGoal.level ||
-            (currentStatus.level === existingGoal.level && currentStatus.asc > existingGoal.asc) ||
-            (currentStatus.level === existingGoal.level && currentStatus.asc === existingGoal.asc && currentStatus.craft > existingGoal.craft);
+        // 如果是同一个武器，保留原有goal；如果是不同武器，使用当前状态作为goal
+        const isSameWeapon = existingWeapon.weapon === weaponData.weaponId;
+        let newGoal: seelie.ZZZWeaponStatus;
+
+        if (isSameWeapon) {
+            // 同一个武器，保留用户设置的goal，但如果当前状态更高则更新goal
+            const shouldUpdateGoal = currentStatus.level > existingGoal.level ||
+                (currentStatus.level === existingGoal.level && currentStatus.asc > existingGoal.asc) ||
+                (currentStatus.level === existingGoal.level && currentStatus.asc === existingGoal.asc && currentStatus.craft > existingGoal.craft);
+            newGoal = shouldUpdateGoal ? currentStatus : existingGoal;
+        } else {
+            // 不同武器，使用当前状态作为新的goal
+            newGoal = currentStatus;
+        }
 
         weaponGoal = {
-            ...existingWeapon,
-            character: weaponData.characterId, // 更新角色关联
+            type: "weapon",
+            character: weaponData.characterId,
+            weapon: weaponData.weaponId, // 更新武器ID
             current: currentStatus,
-            goal: shouldUpdateGoal ? currentStatus : existingGoal
+            goal: newGoal,
+            id: existingId // 保留原有ID
         };
     }
 
