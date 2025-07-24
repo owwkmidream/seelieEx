@@ -26,6 +26,9 @@ declare namespace mihoyo {
         rank: number; // 影级
         sub_element_type: number;
         awaken_state: string;
+        promotes?: number; // 突破
+        ranks?: Rank[]; // 命座描述
+        skills?: Skill[]; // 命座描述
     }
 
     // 角色基础信息项（包含解锁状态等）

@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import CharacterGoalTab from "./tabs/CharacterGoalTab";
 import TalentGoalTab from "./tabs/TalentGoalTab";
-import {addCharacter, batchUpdateCharacter, batchUpdateWeapon} from "../seelie";
+import {addZZZCharacterFromAPI, batchUpdateCharacter, batchUpdateWeapon} from "../seelie";
 import {getAccount, getDetailList} from "../hoyo";
 import {Disclosure, Tab} from "@headlessui/react";
 import {ChevronUpIcon} from '@heroicons/react/solid'
@@ -64,8 +64,9 @@ function ExDialog() {
         getDetailList(game_uid, region).then(
             res => {
                 console.group('返回数据');
+                console.log(res);
                 console.groupCollapsed('角色');
-                console.table(res.map(a => a.character))
+                console.table(res.map(a => a.avatar))
                 console.groupEnd();
                 console.groupCollapsed('武器');
                 console.table(res.map(a => a.weapon))
@@ -73,9 +74,9 @@ function ExDialog() {
                 console.groupCollapsed('角色天赋');
                 res.forEach(
                     c => {
-                        const name = c.character.name;
+                        const name = c.avatar.name_mi18n;
                         console.groupCollapsed(name);
-                        console.table(c.skill_list)
+                        console.table(c.skills)
                         console.groupEnd();
                     }
                 )
@@ -83,7 +84,8 @@ function ExDialog() {
                 console.groupEnd();
                 res.forEach(
                     v => {
-                        addCharacter(v)
+                        // 绝区零数据结构，直接使用新的处理函数
+                        addZZZCharacterFromAPI(v)
                     }
                 )
                 console.log(`米游社数据无法判断是否突破,请自行比较整数等级是否已突破`)

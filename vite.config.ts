@@ -27,7 +27,7 @@ export default defineConfig({
                 ],
                 license: 'MIT',
                 contributionURL: 'https://github.com/Owwkmidream/seelieEx',
-                connect: ['api-takumi.mihoyo.com', 'act-api-takumi.mihoyo.com'],
+                connect: ['api-takumi.mihoyo.com', 'act-api-takumi.mihoyo.com', 'public-data-api.mihoyo.com'],
                 resource: {
                     zzz_character: "https://cdn.jsdelivr.net/gh/Owwkmidream/seelieEx@main/src/data/zzz_character.json",
                     zzz_weapon: "https://cdn.jsdelivr.net/gh/Owwkmidream/seelieEx@main/src/data/zzz_weapon.json"

@@ -15,7 +15,8 @@ import ZZZWeaponInput = seelie.ZZZWeaponInput;
 
 // 原神兼容性导入（如果需要保持向后兼容）
 import CharacterDataEx = mihoyo.CharacterDataEx;
-import {getCharacterId, getWeaponId} from "./query";
+import AvatarDetail = mihoyo.AvatarDetail;
+import { getCharacterId, getWeaponId } from "./query";
 
 // ===== 绝区零特有功能 =====
 
@@ -25,7 +26,7 @@ const convertAscensionLevel = (apiLevel: number): number => {
     // 边界检查：确保输入值在有效范围内
     if (apiLevel < 1) return 0;
     if (apiLevel > 6) return 5;
-    
+
     // 转换公式：seelie_asc = api_asc - 1
     return apiLevel - 1;
 };
@@ -49,7 +50,7 @@ const validateZZZTalentData = (data: any): boolean => {
         chain: [1, 12],
         core: [0, 6]  // 核心技能特殊，从0开始
     };
-    
+
     return Object.entries(skillRanges).every(([skill, [min, max]]) => {
         const value = data[skill];
         return typeof value === 'number' && value >= min && value <= max;
@@ -117,14 +118,14 @@ const addGoal = (data: any) => {
 
     if (index >= 0) {
         // 更新现有目标
-        goals[index] = {...goals[index], ...data};
+        goals[index] = { ...goals[index], ...data };
     } else {
         // 创建新目标
         data.id = generateNewId(goals);
         goals.push(data);
         console.log('Added new goal:', data);
     }
-    
+
     setGoals(goals);
 };
 
@@ -157,10 +158,10 @@ const addTalentGoal = (talentCharacter: string, skill_list: mihoyo.Skill[]) => {
         }
     } else {
         const seelieGoal = totalGoal[talentIdx] as TalentGoal;
-        const {normal, skill, burst} = seelieGoal;
-        const {goal: normalGoal} = normal;
-        const {goal: skillGoal} = skill;
-        const {goal: burstGoal} = burst;
+        const { normal, skill, burst } = seelieGoal;
+        const { goal: normalGoal } = normal;
+        const { goal: skillGoal } = skill;
+        const { goal: burstGoal } = burst;
         talentGoal = {
             ...seelieGoal,
             normal: {
@@ -188,47 +189,47 @@ const addZZZTalentGoal = (character: string, talentData: ZZZTalentInput) => {
 
     const totalGoal: Goal[] = getTotalGoal();
     const id = generateNewId(totalGoal);
-    
+
     // 查找现有的天赋目标
     const existingTalentIdx = findGoalIndex(totalGoal, "talent", character);
-    
+
     let talentGoal: ZZZTalentGoal;
-    
+
     if (existingTalentIdx < 0) {
         // 创建新的天赋目标
         talentGoal = {
             type: "talent",
             character,
-            basic: { 
-                current: talentData.basic, 
-                goal: talentData.basic 
+            basic: {
+                current: talentData.basic,
+                goal: talentData.basic
             },
-            dodge: { 
-                current: talentData.dodge, 
-                goal: talentData.dodge 
+            dodge: {
+                current: talentData.dodge,
+                goal: talentData.dodge
             },
-            assist: { 
-                current: talentData.assist, 
-                goal: talentData.assist 
+            assist: {
+                current: talentData.assist,
+                goal: talentData.assist
             },
-            special: { 
-                current: talentData.special, 
-                goal: talentData.special 
+            special: {
+                current: talentData.special,
+                goal: talentData.special
             },
-            chain: { 
-                current: talentData.chain, 
-                goal: talentData.chain 
+            chain: {
+                current: talentData.chain,
+                goal: talentData.chain
             },
-            core: { 
-                current: talentData.core, 
-                goal: talentData.core 
+            core: {
+                current: talentData.core,
+                goal: talentData.core
             },
             id
         };
     } else {
         // 更新现有的天赋目标 - 只更新current，保留用户设置的goal
         const existingTalent = totalGoal[existingTalentIdx] as ZZZTalentGoal;
-        
+
         talentGoal = {
             ...existingTalent,
             basic: {
@@ -257,7 +258,7 @@ const addZZZTalentGoal = (character: string, talentData: ZZZTalentInput) => {
             }
         };
     }
-    
+
     addGoal(talentGoal);
 };
 
@@ -269,7 +270,7 @@ const addZZZCharacterGoal = (characterData: ZZZCharacterInput) => {
         asc: convertAscensionLevel(characterData.asc), // 转换后的突破等级用于验证
         cons: characterData.cons
     };
-    
+
     if (!validateZZZCharacterData(validationData)) {
         console.error('Invalid ZZZ character data:', characterData);
         return;
@@ -277,19 +278,19 @@ const addZZZCharacterGoal = (characterData: ZZZCharacterInput) => {
 
     const totalGoal: Goal[] = getTotalGoal();
     const id = generateNewId(totalGoal);
-    
+
     // 查找现有的角色目标
     const existingCharacterIdx = findGoalIndex(totalGoal, "character", characterData.characterId);
-    
+
     // 创建角色状态对象
     const currentStatus: CharacterStatus = {
         level: characterData.level,
         asc: convertAscensionLevel(characterData.asc), // 转换突破等级
         text: characterData.level.toString()
     };
-    
+
     let characterGoal: ZZZCharacterGoal;
-    
+
     if (existingCharacterIdx < 0) {
         // 创建新的角色目标
         characterGoal = {
@@ -303,12 +304,12 @@ const addZZZCharacterGoal = (characterData: ZZZCharacterInput) => {
     } else {
         // 更新现有的角色目标 - 只更新current和cons，保留用户设置的goal
         const existingCharacter = totalGoal[existingCharacterIdx] as ZZZCharacterGoal;
-        const {goal: existingGoal} = existingCharacter;
-        
+        const { goal: existingGoal } = existingCharacter;
+
         // 如果当前状态比目标更高，则更新目标
-        const shouldUpdateGoal = currentStatus.level > existingGoal.level || 
-                               (currentStatus.level === existingGoal.level && currentStatus.asc > existingGoal.asc);
-        
+        const shouldUpdateGoal = currentStatus.level > existingGoal.level ||
+            (currentStatus.level === existingGoal.level && currentStatus.asc > existingGoal.asc);
+
         characterGoal = {
             ...existingCharacter,
             cons: characterData.cons, // 更新命座
@@ -316,7 +317,7 @@ const addZZZCharacterGoal = (characterData: ZZZCharacterInput) => {
             goal: shouldUpdateGoal ? currentStatus : existingGoal
         };
     }
-    
+
     addGoal(characterGoal);
 };
 
@@ -325,10 +326,10 @@ const addZZZWeaponGoal = (weaponData: ZZZWeaponInput) => {
     // 验证输入数据
     const validationData = {
         level: weaponData.level,
-        asc: convertAscensionLevel(weaponData.asc), // 转换后的突破等级用于验证
+        asc: weaponData.asc,
         craft: weaponData.craft
     };
-    
+
     if (!validateZZZWeaponData(validationData)) {
         console.error('Invalid ZZZ weapon data:', weaponData);
         return;
@@ -336,23 +337,24 @@ const addZZZWeaponGoal = (weaponData: ZZZWeaponInput) => {
 
     const totalGoal: Goal[] = getTotalGoal();
     const id = generateNewId(totalGoal);
-    
-    // 查找现有的武器目标 - 根据武器ID查找
+
+    // 查找现有的武器目标 - 根据武器ID和角色ID查找
     const existingWeaponIdx = totalGoal.findIndex(
-        g => g.type === "weapon" && 
-             (g as ZZZWeaponGoal).weapon === weaponData.weaponId
+        g => g.type === "weapon" &&
+            (g as ZZZWeaponGoal).weapon === weaponData.weaponId &&
+            (g as ZZZWeaponGoal).character === weaponData.characterId
     );
-    
+
     // 创建武器状态对象
     const currentStatus: seelie.ZZZWeaponStatus = {
         level: weaponData.level,
-        asc: convertAscensionLevel(weaponData.asc), // 转换突破等级
+        asc: weaponData.asc,
         craft: weaponData.craft,
         text: weaponData.level.toString()
     };
-    
+
     let weaponGoal: ZZZWeaponGoal;
-    
+
     if (existingWeaponIdx < 0) {
         // 创建新的武器目标
         weaponGoal = {
@@ -366,13 +368,13 @@ const addZZZWeaponGoal = (weaponData: ZZZWeaponInput) => {
     } else {
         // 更新现有的武器目标 - 只更新current，保留用户设置的goal
         const existingWeapon = totalGoal[existingWeaponIdx] as ZZZWeaponGoal;
-        const {goal: existingGoal} = existingWeapon;
-        
+        const { goal: existingGoal } = existingWeapon;
+
         // 如果当前状态比目标更高，则更新目标
-        const shouldUpdateGoal = currentStatus.level > existingGoal.level || 
-                               (currentStatus.level === existingGoal.level && currentStatus.asc > existingGoal.asc) ||
-                               (currentStatus.level === existingGoal.level && currentStatus.asc === existingGoal.asc && currentStatus.craft > existingGoal.craft);
-        
+        const shouldUpdateGoal = currentStatus.level > existingGoal.level ||
+            (currentStatus.level === existingGoal.level && currentStatus.asc > existingGoal.asc) ||
+            (currentStatus.level === existingGoal.level && currentStatus.asc === existingGoal.asc && currentStatus.craft > existingGoal.craft);
+
         weaponGoal = {
             ...existingWeapon,
             character: weaponData.characterId, // 更新角色关联
@@ -380,7 +382,7 @@ const addZZZWeaponGoal = (weaponData: ZZZWeaponInput) => {
             goal: shouldUpdateGoal ? currentStatus : existingGoal
         };
     }
-    
+
     addGoal(weaponGoal);
 };
 
@@ -420,10 +422,10 @@ export const addCharacterGoal = (level_current: number, nameEn: String, name: st
         characterGoal = type == "character" ? initCharacterGoal() : initWeaponGoal();
     } else {
         const seelieGoal = type == "character" ? totalGoal[characterIdx] as CharacterGoal : totalGoal[characterIdx] as WeaponGoal
-        const {goal, current} = seelieGoal;
-        const {level: levelCurrent, asc: ascCurrent} = current;
-        const {level: levelGoal, asc: ascGoal} = goal;
-        const {level, asc} = characterStatus;
+        const { goal, current } = seelieGoal;
+        const { level: levelCurrent, asc: ascCurrent } = current;
+        const { level: levelGoal, asc: ascGoal } = goal;
+        const { level, asc } = characterStatus;
 
         characterGoal = {
             ...seelieGoal,
@@ -442,61 +444,147 @@ export function addZZZCharacter(
 ) {
     // 添加角色数据
     addZZZCharacterGoal(characterData);
-    
+
     // 添加天赋数据
     addZZZTalentGoal(characterData.characterId, talentData);
-    
+
     // 如果有武器数据，添加武器
     if (weaponData) {
         addZZZWeaponGoal(weaponData);
     }
 }
 
-// 保留原有的addCharacter函数以维持向后兼容性（如果需要）
-export function addCharacter(characterDataEx: CharacterDataEx) {
+// 绝区零角色数据处理函数 - 处理新的API数据结构
+export function addZZZCharacterFromAPI(avatarDetail: mihoyo.AvatarDetail) {
+    const { avatar, weapon } = avatarDetail;
+    const { skills, ranks } = avatar;
 
-    const {character, skill_list, weapon} = characterDataEx;
+    if (!avatar) {
+        console.error('角色数据缺失');
+        return;
+    }
+
+    const characterId = getCharacterId(avatar.name_mi18n || avatar.full_name_mi18n);
+    if (!characterId) {
+        console.warn(`未找到角色ID: ${avatar.name_mi18n || avatar.full_name_mi18n}`);
+        return;
+    }
+    const avatarRank = avatar.rank || ranks?.filter(r => r.is_unlocked).length || 0;
+    const characterInput: ZZZCharacterInput = {
+        characterId,
+        level: avatar.level,
+        asc: avatar?.promotes || 1, // API格式的突破等级 1-6
+        cons: avatarRank
+    };
+    addZZZCharacterGoal(characterInput);
+
+    // 2. 处理天赋数据
+    if (skills && skills.length > 0) {
+        // 绝区零技能类型映射：0:普攻, 1:特殊技, 2:闪避, 3:连携技, 5:核心被动, 6:支援技
+        const skillMap: { [key: number]: keyof ZZZTalentInput } = {
+            0: 'basic',    // 普攻
+            1: 'dodge',  // 特殊技
+            2: 'assist',    // 闪避
+            3: 'special',    // 连携技
+            4: 'chain',     // 核心被动
+            5: 'core'    // 支援技
+        };
+
+        const talentInput: ZZZTalentInput = {
+            characterId,
+            basic: 1,
+            dodge: 1,
+            assist: 1,
+            special: 1,
+            chain: 1,
+            core: 0
+        };
+
+        // 根据API返回的技能数据设置等级
+        skills.forEach(skill => {
+            const skillKey = skillMap[skill.skill_type];
+            if (skillKey) {
+                // 处理核心技等级
+                if (skillKey === 'core') (talentInput as any)[skillKey] = skill.level - 1;
+                // 处理命座等级加成
+                else (talentInput as any)[skillKey] = skill.level - (avatarRank >= 3 ? 2 : 0) - (avatarRank >= 5 ? 2 : 0);
+            }
+        });
+
+        addZZZTalentGoal(characterId, talentInput);
+    }
+
+    // 3. 处理武器数据
+    if (weapon) {
+        const weaponId = getWeaponId(weapon.name);
+        if (weaponId) {
+            // 根据武器等级推算突破等级（绝区零武器等级上限60，突破点：10, 20, 30, 40, 50）
+            let weaponAscensionLevel = 0;
+            if (weapon.level > 50) weaponAscensionLevel = 5;
+            else if (weapon.level > 40) weaponAscensionLevel = 4;
+            else if (weapon.level > 30) weaponAscensionLevel = 3;
+            else if (weapon.level > 20) weaponAscensionLevel = 2;
+            else if (weapon.level > 10) weaponAscensionLevel = 1;
+
+            const weaponInput: ZZZWeaponInput = {
+                characterId,
+                weaponId,
+                level: weapon.level,
+                asc: weaponAscensionLevel, // 0-5
+                craft: weapon.star || 1 // 精炼等级
+            };
+            addZZZWeaponGoal(weaponInput);
+        }
+    }
+}
+
+// 保留原有的addCharacter函数以维持向后兼容性（原神数据）
+export function addCharacter(characterDataEx: CharacterDataEx) {
+    // 检查是否为绝区零数据结构
+    if (characterDataEx.avatar && characterDataEx.skills) {
+        // 这是绝区零的数据结构，使用新的处理函数
+        addZZZCharacterFromAPI(characterDataEx as mihoyo.AvatarDetail);
+        return;
+    }
+
+    // 原神数据处理逻辑
+    const { character, skills, weapon } = characterDataEx;
     const characterName = character.name_mi18n || character.full_name_mi18n;
 
-    //{"type":"character","character":"traveler","current":{"level":70,"asc":4,"text":"70"},"goal":{"level":70,"asc":4,"text":"70"},"id":1},
-    //{"type":"weapon","weapon":""deathmatch"","current":{"level":70,"asc":4,"text":"70"},"goal":{"level":70,"asc":4,"text":"70"},"id":1},
-    //{"type":"talent","character":"traveler_geo","c3":false,"c5":false,"normal":{"current":1,"goal":6},"skill":{"current":1,"goal":6},"burst":{"current":1,"goal":6},"id":2}
-
     if (weapon) {
-        const {name, level: weaponLeveL} = weapon;
+        const { name, level: weaponLeveL } = weapon;
         const weaponId = getWeaponId(name);
         if (weaponId) {
             addCharacterGoal(weaponLeveL, weaponId, name, "weapon");
         }
     }
-    const {level: characterLevel} = character;
+    const { level: characterLevel } = character;
     const characterId = getCharacterId(characterName);
     if (!characterId) {
         return
     }
     addCharacterGoal(characterLevel, characterId, characterName, "character");
 
-    // 绝区零没有旅行者角色，直接使用角色ID
-    if (skill_list) {
-        addTalentGoal(characterId, skill_list);
+    // 原神天赋处理
+    if (skills) {
+        addTalentGoal(characterId, skills);
     }
-
 }
 
 // 绝区零等级状态列表 - 等级上限60，突破等级0-5
 export const characterStatusList: CharacterStatus[] = [
-    {level: 1, asc: 0, text: "1"},
-    {level: 10, asc: 0, text: "10"},
-    {level: 10, asc: 1, text: "10 A"},
-    {level: 20, asc: 1, text: "20"},
-    {level: 20, asc: 2, text: "20 A"},
-    {level: 30, asc: 2, text: "30"},
-    {level: 30, asc: 3, text: "30 A"},
-    {level: 40, asc: 3, text: "40"},
-    {level: 40, asc: 4, text: "40 A"},
-    {level: 50, asc: 4, text: "50"},
-    {level: 50, asc: 5, text: "50 A"},
-    {level: 60, asc: 5, text: "60"},
+    { level: 1, asc: 0, text: "1" },
+    { level: 10, asc: 0, text: "10" },
+    { level: 10, asc: 1, text: "10 A" },
+    { level: 20, asc: 1, text: "20" },
+    { level: 20, asc: 2, text: "20 A" },
+    { level: 30, asc: 2, text: "30" },
+    { level: 30, asc: 3, text: "30 A" },
+    { level: 40, asc: 3, text: "40" },
+    { level: 40, asc: 4, text: "40 A" },
+    { level: 50, asc: 4, text: "50" },
+    { level: 50, asc: 5, text: "50 A" },
+    { level: 60, asc: 5, text: "60" },
 ]
 
 const initCharacterStatus = (level_current: number) => {
@@ -505,7 +593,7 @@ const initCharacterStatus = (level_current: number) => {
         return initCharacterStatus;
     }
     for (let characterStatus of characterStatusList) {
-        const {level} = characterStatus;
+        const { level } = characterStatus;
         if (level_current < level) {
             return initCharacterStatus;
         } else if (level_current == level) {
@@ -518,7 +606,7 @@ const initCharacterStatus = (level_current: number) => {
 };
 
 const updateTalent = (talent: TalentGoal, normalGoal = 9, skillGoal = 9, burstGoal = 9) => {
-    const {normal: {current: normalCurrent}, skill: {current: skillCurrent}, burst: {current: burstCurrent}} = talent;
+    const { normal: { current: normalCurrent }, skill: { current: skillCurrent }, burst: { current: burstCurrent } } = talent;
     const talentNew = {
         ...talent,
         normal: {
@@ -545,54 +633,54 @@ const updateZZZTalent = (talent: ZZZTalentGoal, skillGoals: {
     core?: number
 }) => {
     const {
-        basic: {current: basicCurrent},
-        dodge: {current: dodgeCurrent},
-        assist: {current: assistCurrent},
-        special: {current: specialCurrent},
-        chain: {current: chainCurrent},
-        core: {current: coreCurrent}
+        basic: { current: basicCurrent },
+        dodge: { current: dodgeCurrent },
+        assist: { current: assistCurrent },
+        special: { current: specialCurrent },
+        chain: { current: chainCurrent },
+        core: { current: coreCurrent }
     } = talent;
 
     const talentNew: ZZZTalentGoal = {
         ...talent,
         basic: {
             current: basicCurrent,
-            goal: skillGoals.basic !== undefined ? 
-                (basicCurrent > skillGoals.basic ? basicCurrent : skillGoals.basic) : 
+            goal: skillGoals.basic !== undefined ?
+                (basicCurrent > skillGoals.basic ? basicCurrent : skillGoals.basic) :
                 talent.basic.goal
         },
         dodge: {
             current: dodgeCurrent,
-            goal: skillGoals.dodge !== undefined ? 
-                (dodgeCurrent > skillGoals.dodge ? dodgeCurrent : skillGoals.dodge) : 
+            goal: skillGoals.dodge !== undefined ?
+                (dodgeCurrent > skillGoals.dodge ? dodgeCurrent : skillGoals.dodge) :
                 talent.dodge.goal
         },
         assist: {
             current: assistCurrent,
-            goal: skillGoals.assist !== undefined ? 
-                (assistCurrent > skillGoals.assist ? assistCurrent : skillGoals.assist) : 
+            goal: skillGoals.assist !== undefined ?
+                (assistCurrent > skillGoals.assist ? assistCurrent : skillGoals.assist) :
                 talent.assist.goal
         },
         special: {
             current: specialCurrent,
-            goal: skillGoals.special !== undefined ? 
-                (specialCurrent > skillGoals.special ? specialCurrent : skillGoals.special) : 
+            goal: skillGoals.special !== undefined ?
+                (specialCurrent > skillGoals.special ? specialCurrent : skillGoals.special) :
                 talent.special.goal
         },
         chain: {
             current: chainCurrent,
-            goal: skillGoals.chain !== undefined ? 
-                (chainCurrent > skillGoals.chain ? chainCurrent : skillGoals.chain) : 
+            goal: skillGoals.chain !== undefined ?
+                (chainCurrent > skillGoals.chain ? chainCurrent : skillGoals.chain) :
                 talent.chain.goal
         },
         core: {
             current: coreCurrent,
-            goal: skillGoals.core !== undefined ? 
-                (coreCurrent > skillGoals.core ? coreCurrent : skillGoals.core) : 
+            goal: skillGoals.core !== undefined ?
+                (coreCurrent > skillGoals.core ? coreCurrent : skillGoals.core) :
                 talent.core.goal
         }
     };
-    
+
     addGoal(talentNew);
 };
 
@@ -602,9 +690,9 @@ export const batchUpdateTalent = (all: boolean, normal: number, skill: number, b
 }
 
 // ===== 绝区零API导出 =====
-export { 
-    addZZZTalentGoal, 
-    addZZZCharacterGoal, 
+export {
+    addZZZTalentGoal,
+    addZZZCharacterGoal,
     addZZZWeaponGoal
 };
 
@@ -612,12 +700,12 @@ export {
 
 // 绝区零批量天赋更新函数 - 支持六种技能类型
 export const batchUpdateZZZTalent = (
-    all: boolean, 
-    basic: number, 
-    dodge: number, 
-    assist: number, 
-    special: number, 
-    chain: number, 
+    all: boolean,
+    basic: number,
+    dodge: number,
+    assist: number,
+    special: number,
+    chain: number,
     core: number
 ) => {
     getTotalGoal()
@@ -629,9 +717,9 @@ export const batchUpdateZZZTalent = (
 };
 
 const updateCharacter = (character: CharacterGoal, characterStatusGoal: CharacterStatus) => {
-    const {current} = character;
-    const {level: levelCurrent, asc: ascCurrent} = current;
-    const {level, asc} = characterStatusGoal;
+    const { current } = character;
+    const { level: levelCurrent, asc: ascCurrent } = current;
+    const { level, asc } = characterStatusGoal;
 
     const characterGoalNew = {
         ...character,
@@ -647,9 +735,9 @@ export const batchUpdateZZZCharacter = (all: boolean, characterStatusGoal: Chara
         .filter(a => all || !getGoalInactive().includes(a.character as string))
         .forEach(character => {
             const zzzCharacter = character as ZZZCharacterGoal;
-            const {current} = zzzCharacter;
-            const {level: levelCurrent, asc: ascCurrent} = current;
-            const {level, asc} = characterStatusGoal;
+            const { current } = zzzCharacter;
+            const { level: levelCurrent, asc: ascCurrent } = current;
+            const { level, asc } = characterStatusGoal;
 
             const characterGoalNew: ZZZCharacterGoal = {
                 ...zzzCharacter,
@@ -673,14 +761,14 @@ export const batchUpdateZZZWeapon = (all: boolean, weaponStatusGoal: seelie.ZZZW
         .filter(a => all || !getGoalInactive().includes((a as ZZZWeaponGoal).weapon as string))
         .forEach(weapon => {
             const zzzWeapon = weapon as ZZZWeaponGoal;
-            const {current} = zzzWeapon;
-            const {level: levelCurrent, asc: ascCurrent, craft: craftCurrent} = current;
-            const {level, asc, craft} = weaponStatusGoal;
+            const { current } = zzzWeapon;
+            const { level: levelCurrent, asc: ascCurrent, craft: craftCurrent } = current;
+            const { level, asc, craft } = weaponStatusGoal;
 
             // 如果新目标比当前状态更高，则更新目标
-            const shouldUpdate = level > levelCurrent || 
-                               (level === levelCurrent && asc > ascCurrent) ||
-                               (level === levelCurrent && asc === ascCurrent && craft > craftCurrent);
+            const shouldUpdate = level > levelCurrent ||
+                (level === levelCurrent && asc > ascCurrent) ||
+                (level === levelCurrent && asc === ascCurrent && craft > craftCurrent);
 
             const weaponGoalNew: ZZZWeaponGoal = {
                 ...zzzWeapon,
