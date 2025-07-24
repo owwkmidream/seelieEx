@@ -108,10 +108,17 @@ const addGoal = (data: any) => {
     let index: number = -1;
 
     // 查找现有目标
-    if (data.character && data.type) {
+    if (data.character && data.type === "character") {
         index = findGoalIndex(goals, data.type, data.character);
-    } else if (data.weapon && data.type === "weapon") {
-        index = findGoalIndex(goals, data.type, data.weapon);
+    } else if (data.character && data.type === "talent") {
+        index = findGoalIndex(goals, data.type, data.character);
+    } else if (data.weapon && data.character && data.type === "weapon") {
+        // 武器需要同时匹配武器ID和角色ID
+        index = goals.findIndex(g =>
+            g.type === "weapon" &&
+            (g as ZZZWeaponGoal).weapon === data.weapon &&
+            (g as ZZZWeaponGoal).character === data.character
+        );
     } else if (data.id) {
         index = goals.findIndex((g: any) => g.id === data.id);
     }
@@ -477,24 +484,10 @@ export function addZZZCharacterFromAPI(avatarDetail: mihoyo.AvatarDetail) {
         cons: avatarRank
     };
     addZZZCharacterGoal(characterInput);
-
     // 2. 处理天赋数据
     if (skills && skills.length > 0) {
-        // 根据技能标题关键字判断技能类型
-        const getSkillType = (skill: any): keyof ZZZTalentInput | null => {
-            // 检查技能的items数组中的title
-            for (const item of skill.items || []) {
-                const title = item.title || '';
-                if (title.includes('普通攻击') || title.includes('普攻')) return 'basic';
-                if (title.includes('闪避')) return 'dodge';
-                if (title.includes('支援')) return 'assist';
-                if (title.includes('特殊技')) return 'special';
-                if (title.includes('连携技')) return 'chain';
-                if (title.includes('核心被动')) return 'core';
-            }
-            return null;
-        };
-
+        // 按index顺序判断技能类型
+        const skillTypeOrder: (keyof ZZZTalentInput)[] = ['basic', 'dodge', 'assist', 'special', 'chain', 'core'];
         const talentInput: ZZZTalentInput = {
             characterId,
             basic: 1,
@@ -506,9 +499,9 @@ export function addZZZCharacterFromAPI(avatarDetail: mihoyo.AvatarDetail) {
         };
 
         // 根据API返回的技能数据设置等级
-        skills.forEach(skill => {
-            const skillKey = getSkillType(skill);
-            if (skillKey) {
+        skills.forEach((skill, index) => {
+            if (index < skillTypeOrder.length) {
+                const skillKey = skillTypeOrder[index];
                 // 处理核心技等级
                 if (skillKey === 'core') (talentInput as any)[skillKey] = skill.level - 1;
                 // 处理命座等级加成
