@@ -23,7 +23,7 @@
     "postcss": "8.4.12",
     "tailwindcss": "^3.0.24",
     "typescript": "^5.3.0",
-    "vite": "^4.1.1",
+    "vite": "^7.0.5",
     "vite-plugin-monkey": "^2.11.1"
   }
 }
