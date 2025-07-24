@@ -29,8 +29,8 @@ export default defineConfig({
                 contributionURL: 'https://github.com/Owwkmidream/seelieEx',
                 connect: ['api-takumi.mihoyo.com', 'act-api-takumi.mihoyo.com'],
                 resource: {
-                    zzz_character: "https://ghproxy.com/https://raw.githubusercontent.com/Owwkmidream/seelieEx/main/src/data/zzz_character.json",
-                    zzz_weapon: "https://ghproxy.com/https://raw.githubusercontent.com/Owwkmidream/seelieEx/main/src/data/zzz_weapon.json"
+                    zzz_character: "https://cdn.jsdelivr.net/gh/Owwkmidream/seelieEx@main/src/data/zzz_character.json",
+                    zzz_weapon: "https://cdn.jsdelivr.net/gh/Owwkmidream/seelieEx@main/src/data/zzz_weapon.json"
                 },
                 "run-at": "document-end",
                 homepage: "https://github.com/Owwkmidream",
