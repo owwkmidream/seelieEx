@@ -20,6 +20,25 @@ function generateUUID() {
     });
 }
 
+// 生成随机字符串
+function generateCharString(number = 16) {
+    const characters = 'abcdef0123456789';
+    let result = '';
+    for (let i = 0; i < number; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        result += characters[randomIndex];
+    }
+    return result;
+}
+
+// 生成GUID
+function getGuid() {
+    function S4() {
+        return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1)
+    }
+    return (S4() + S4() + '-' + S4() + '-' + S4() + '-' + S4() + '-' + S4() + S4() + S4())
+}
+
 
 
 // 基础请求头
@@ -117,6 +136,7 @@ export const getAccount = async () => {
     if (!err) {
         if (res.ok) {
             const resData = await res.json();
+            console.log(resData);
             const { retcode, data } = resData;
             if (retcode === 0) {
                 const { list: accountList } = await data as Data<Role>;
@@ -142,6 +162,7 @@ const getCharacters = async (uid: string, region: string) => {
         console.log(res)
         if (res.ok) {
             const resData = await res.json();
+            console.log(resData);
             const { retcode, data } = resData;
             if (retcode === 0) {
                 // 验证数据结构
@@ -186,6 +207,7 @@ const getCharacterDetail = async (characters: Character[], uid: string, region: 
     if (!err) {
         if (res.ok) {
             const resData = await res.json();
+            console.log(resData);
             const { retcode, data } = resData;
             if (retcode === 0) {
                 // 验证数据结构

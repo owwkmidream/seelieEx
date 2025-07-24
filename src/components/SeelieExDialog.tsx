@@ -34,7 +34,7 @@ function ExDialog() {
             return '';
         }
         const role = accountList[idx];
-        return `${role.game_uid}(${role.region})`
+        return `${role.nickname}(${role.game_uid})`
     }
 
     const getAccountList = () => {
