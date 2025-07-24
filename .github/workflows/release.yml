@@ -20,11 +20,13 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Get commit message
-      - name: Get commit message
+      # Get commit message and hash
+      - name: Get commit message and hash
         run: |
           COMMIT_MESSAGE=$(git log --format=%s -n 1)
+          COMMIT_HASH=$(git rev-parse --short HEAD)
           echo "commitmsg=${COMMIT_MESSAGE}" >> $GITHUB_ENV
+          echo "commithash=${COMMIT_HASH}" >> $GITHUB_ENV
       - name: Show commit message
         run : echo "$commitmsg"
 
@@ -42,11 +44,10 @@ jobs:
 
       # Upload build artifacts (always upload)
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: build-artifacts
-          path: dist/
-          retention-days: 90
+          name: zzzSeelieEx-${{ env.commithash }}
+          path: dist/index.user.js
 
       # Commit
       - name: commit dist
