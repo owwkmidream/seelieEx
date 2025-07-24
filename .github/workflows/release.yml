@@ -40,6 +40,14 @@ jobs:
       - name: Build
         run: npm install && npm install @types/node -D && npm run build
 
+      # Upload build artifacts (always upload)
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifacts
+          path: dist/
+          retention-days: 90
+
       # Commit
       - name: commit dist
         uses: EndBug/add-and-commit@v7
