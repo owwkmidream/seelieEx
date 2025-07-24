@@ -293,7 +293,7 @@ const addZZZCharacterGoal = (characterData: ZZZCharacterInput) => {
     const currentStatus: CharacterStatus = {
         level: characterData.level,
         asc: convertAscensionLevel(characterData.asc), // 转换突破等级
-        text: characterData.level.toString()
+        // text: characterData.level.toString()
     };
 
     let characterGoal: ZZZCharacterGoal;
@@ -357,7 +357,7 @@ const addZZZWeaponGoal = (weaponData: ZZZWeaponInput) => {
         level: weaponData.level,
         asc: weaponData.asc,
         craft: weaponData.craft,
-        text: weaponData.level.toString()
+        // text: weaponData.level.toString()
     };
 
     let weaponGoal: ZZZWeaponGoal;
@@ -571,18 +571,18 @@ export function addCharacter(characterDataEx: CharacterDataEx) {
 
 // 绝区零等级状态列表 - 等级上限60，突破等级0-5
 export const characterStatusList: CharacterStatus[] = [
-    { level: 1, asc: 0, text: "1" },
-    { level: 10, asc: 0, text: "10" },
-    { level: 10, asc: 1, text: "10 A" },
-    { level: 20, asc: 1, text: "20" },
-    { level: 20, asc: 2, text: "20 A" },
-    { level: 30, asc: 2, text: "30" },
-    { level: 30, asc: 3, text: "30 A" },
-    { level: 40, asc: 3, text: "40" },
-    { level: 40, asc: 4, text: "40 A" },
-    { level: 50, asc: 4, text: "50" },
-    { level: 50, asc: 5, text: "50 A" },
-    { level: 60, asc: 5, text: "60" },
+    { level: 1, asc: 0 },
+    { level: 10, asc: 0 },
+    { level: 10, asc: 1 },
+    { level: 20, asc: 1 },
+    { level: 20, asc: 2 },
+    { level: 30, asc: 2 },
+    { level: 30, asc: 3 },
+    { level: 40, asc: 3 },
+    { level: 40, asc: 4 },
+    { level: 50, asc: 4 },
+    { level: 50, asc: 5 },
+    { level: 60, asc: 5 },
 ]
 
 const initCharacterStatus = (level_current: number) => {
