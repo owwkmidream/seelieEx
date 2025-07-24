@@ -1,0 +1,175 @@
+/* SeelieEx 专用样式文件 - 完全隔离的样式 */
+
+/* 只导入 Tailwind 的 components 和 utilities，不导入 base */
+@tailwind components;
+@tailwind utilities;
+
+/* 为 SeelieEx 创建完全隔离的样式作用域 */
+#seelieEx {
+  /* 完全重置所有继承的样式 */
+  all: initial;
+  
+  /* 重新设置必要的基础样式 */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  line-height: 1.5;
+  color: #000;
+  background: transparent;
+  
+  /* 确保容器正常显示 */
+  display: block !important;
+  position: relative;
+  z-index: 1200;
+  
+  /* 防止外部样式影响 */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 重置 SeelieEx 内所有元素的样式 */
+#seelieEx *,
+#seelieEx *::before,
+#seelieEx *::after {
+  all: unset;
+  display: revert;
+  box-sizing: border-box;
+}
+
+/* 恢复必要的元素样式 */
+#seelieEx div {
+  display: block;
+}
+
+#seelieEx span {
+  display: inline;
+}
+
+#seelieEx button {
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+#seelieEx input,
+#seelieEx select,
+#seelieEx textarea {
+  display: inline-block;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  border: 1px solid #d1d5db;
+  background-color: white;
+  color: #374151;
+}
+
+#seelieEx h1,
+#seelieEx h2,
+#seelieEx h3,
+#seelieEx h4,
+#seelieEx h5,
+#seelieEx h6 {
+  display: block;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+#seelieEx p {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+#seelieEx ul,
+#seelieEx ol {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#seelieEx li {
+  display: list-item;
+}
+
+/* 确保 SVG 图标正常显示 */
+#seelieEx svg {
+  display: inline-block;
+  vertical-align: middle;
+  fill: currentColor;
+}
+
+/* 确保 Headless UI 组件正常工作 */
+#seelieEx [role="button"] {
+  cursor: pointer;
+}
+
+#seelieEx [role="listbox"] {
+  display: block;
+}
+
+#seelieEx [role="option"] {
+  display: block;
+  cursor: pointer;
+}
+
+/* 确保过渡动画正常工作 */
+#seelieEx * {
+  transition-property: none;
+  transition-duration: 0s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+}
+
+/* 允许 Tailwind 的过渡类生效 */
+#seelieEx .seelie-transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+#seelieEx .seelie-duration-100 {
+  transition-duration: 100ms;
+}
+
+#seelieEx .seelie-ease-in {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+/* 确保 transform 类正常工作 */
+#seelieEx .seelie-transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+#seelieEx .seelie-rotate-180 {
+  --tw-rotate: 180deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+#seelieEx .seelie-translate-x-1 {
+  --tw-translate-x: 0.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+#seelieEx .seelie-translate-x-6 {
+  --tw-translate-x: 1.5rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+/* 初始化 CSS 变量 */
+#seelieEx * {
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+}

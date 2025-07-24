@@ -1,22 +1,55 @@
-<!--
- * @Date: 2021-07-10 11:00:00
- * @LastEditors: KeyPJ
- * @Author: KeyPJ
- * @LastEditTime: 2022-04-18 12:00:00
--->
+# zzzSeelieEx
 
-# 前言
-~~本脚本基于 [tampermonkey-webpack-template](https://github.com/lisonge/tampermonkey-webpack-template) 开发~~
+绝区零规划助手扩展，自动从米游社获取角色信息并导入至绝区零seelie规划工具
 
-# 简介
-个人想偷懒,不想手动在[仙灵 - 绝区零规划助手](https://zzz.seelie.me/) 手动录入角色及其装备  
-于是简单整理一个脚本,利用米游社api获取角色信息,直接导入至绝区零seelie
+## ✨ 功能特点
 
-相关api详见[mihoyo.http](mihoyo.http)
+- 🎮 **完全适配绝区零** - 支持6种技能系统、武器精炼、角色命座
+- 🔄 **自动数据同步** - 从米游社API获取最新角色数据
+- 🎨 **样式完全隔离** - 不会影响宿主网页的样式显示
+- 📊 **批量操作支持** - 支持批量设置角色、武器、天赋目标等级
+- 🛡️ **数据验证机制** - 完善的边界检查和错误处理
 
-# 使用说明
-本脚本使用GM_xmlhttpRequest跨域请求相关api,所以需要登录米游社活动页面, 例如:
+## 🚀 使用方法
 
-国服:绝区零活动页面, 且确定已通过米游社已绑定绝区零账户
+1. 安装油猴脚本管理器（如 Tampermonkey）
+2. 安装 zzzSeelieEx 用户脚本
+3. 访问 [绝区零 Seelie 规划工具](https://zzz.seelie.me/)
+4. 点击油猴菜单中的"打开SeelieEx"
+5. 获取账户信息并同步角色数据
 
-其他的主要信息也会在console输出,请自行查看
+### 前置条件
+- 需要登录米游社绝区零活动页面
+- 确保米游社账户已绑定绝区零游戏账户
+- 在绝区零 Seelie 页面使用脚本
+
+## 🔧 开发说明
+
+### 构建项目
+```bash
+npm install
+npm run build
+```
+
+### 样式隔离
+项目采用完全的样式隔离方案，确保油猴脚本不会影响宿主网页：
+- 使用 `seelie-` 前缀避免样式冲突
+- 限制样式作用域在 `#seelieEx` 容器内
+- 移除全局样式重置，只保留必要的组件样式
+
+详细说明请参考 [样式隔离解决方案](STYLE_ISOLATION_SOLUTION.md)
+
+## 📋 项目状态
+
+✅ **数据层** - 完全适配绝区零数据结构  
+✅ **API层** - 完全适配绝区零米游社API  
+✅ **UI层** - 用户界面组件完全适配  
+✅ **样式层** - 样式隔离问题完全解决  
+
+项目已完全就绪，可以正常使用。
+
+## 📚 相关文档
+
+- [API 分析文档](mihoyo.http) - 米游社API接口详情
+- [开发计划](ZZZ_DEVELOPMENT_PLAN.md) - 项目开发进度和计划
+- [样式隔离方案](STYLE_ISOLATION_SOLUTION.md) - 详细的样式隔离解决方案

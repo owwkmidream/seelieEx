@@ -1,0 +1,146 @@
+/* 
+ * SeelieEx 样式隔离解决方案
+ * 这个文件确保油猴脚本的样式不会影响到宿主页面
+ */
+
+/* 只在 #seelieEx 容器内应用 Tailwind 样式 */
+@tailwind components;
+@tailwind utilities;
+
+/* 
+ * 核心隔离策略：
+ * 1. 使用 #seelieEx 作为根容器
+ * 2. 所有样式都限制在这个容器内
+ * 3. 使用 seelie- 前缀避免类名冲突
+ */
+
+#seelieEx {
+  /* 基础样式重置，只影响容器本身 */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  
+  /* 确保容器独立性 */
+  position: relative;
+  z-index: 1200;
+  
+  /* 防止样式继承 */
+  color: initial;
+  background: initial;
+}
+
+/* 只重置 SeelieEx 内部元素的必要样式 */
+#seelieEx *,
+#seelieEx *::before,
+#seelieEx *::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb;
+}
+
+/* 确保按钮和表单元素正常工作 */
+#seelieEx button,
+#seelieEx [role="button"] {
+  cursor: pointer;
+  background-color: transparent;
+  background-image: none;
+  text-transform: none;
+  font-family: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+#seelieEx input,
+#seelieEx select,
+#seelieEx textarea {
+  font-family: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+}
+
+/* 确保 SVG 图标正常显示 */
+#seelieEx svg {
+  display: block;
+  vertical-align: middle;
+}
+
+/* 确保列表正常显示 */
+#seelieEx ul,
+#seelieEx ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 确保标题正常显示 */
+#seelieEx h1,
+#seelieEx h2,
+#seelieEx h3,
+#seelieEx h4,
+#seelieEx h5,
+#seelieEx h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/* 确保段落正常显示 */
+#seelieEx p {
+  margin: 0;
+  padding: 0;
+}
+
+/* 确保链接正常显示 */
+#seelieEx a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/* 确保表格正常显示 */
+#seelieEx table {
+  text-indent: 0;
+  border-color: inherit;
+  border-collapse: collapse;
+}
+
+/* 确保表单元素的焦点状态 */
+#seelieEx button:focus,
+#seelieEx input:focus,
+#seelieEx select:focus,
+#seelieEx textarea:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+/* 确保禁用状态正常显示 */
+#seelieEx button:disabled,
+#seelieEx input:disabled,
+#seelieEx select:disabled,
+#seelieEx textarea:disabled {
+  cursor: default;
+}
+
+/* 确保图片正常显示 */
+#seelieEx img,
+#seelieEx video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 确保隐藏元素真正隐藏 */
+#seelieEx [hidden] {
+  display: none;
+}

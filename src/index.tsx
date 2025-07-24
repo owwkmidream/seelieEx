@@ -4,7 +4,7 @@ import App from './App';
 
 let seelieEx = document.createElement('div');
 seelieEx.id = 'seelieEx'
-seelieEx.className = 'flex'
+seelieEx.className = 'seelie-flex'
 document.getElementById('app')?.parentElement?.append(seelieEx);
 
 ReactDOM.render(

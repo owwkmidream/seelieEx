@@ -28,17 +28,17 @@ function TalentGoalTab() {
     }
 
     return <div>
-        <div className="flex pt-4">
+        <div className="seelie-flex seelie-pt-4">
             <ToggleSwitch
-                className='w-full'
+                className='seelie-w-full'
                 checked={selectAllRoles}
                 onChange={setSelectAllRoles}
                 labelLeft={'全部角色'}
                 labelRight={'仅激活角色'}
             />
         </div>
-        <div className="grid grid-rows-2 grid-flow-col gap-2">
-            <div className='mt-10'>普通攻击</div>
+        <div className="seelie-grid seelie-grid-rows-2 seelie-grid-flow-col seelie-gap-2">
+            <div className='seelie-mt-10'>普通攻击</div>
             <div>
                 <ListboxSelect
                     selected={talentGoalLevel.normal}
@@ -50,7 +50,7 @@ function TalentGoalTab() {
                     show={num => `${num}`}
                 />
             </div>
-            <div className='mt-10'>元素战技</div>
+            <div className='seelie-mt-10'>元素战技</div>
             <div>
                 <ListboxSelect
                     selected={talentGoalLevel.skill}
@@ -62,7 +62,7 @@ function TalentGoalTab() {
                     show={num => `${num}`}
                 />
             </div>
-            <div className='mt-10'>元素爆发</div>
+            <div className='seelie-mt-10'>元素爆发</div>
             <div>
                 <ListboxSelect
                     selected={talentGoalLevel.burst}
@@ -75,9 +75,9 @@ function TalentGoalTab() {
                 />
             </div>
         </div>
-        <div className="flex pt-2">
-            <div className="w-full">
-                <button className="text-white bg-blue-500 px-4 py-2"
+        <div className="seelie-flex seelie-pt-2">
+            <div className="seelie-w-full">
+                <button className="seelie-text-white seelie-bg-blue-500 seelie-px-4 seelie-py-2 seelie-rounded hover:seelie-bg-blue-600"
                         onClick={batchSetCharacterTalentLevel}>批量设置角色目标天赋
                 </button>
             </div>

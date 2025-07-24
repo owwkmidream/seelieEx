@@ -101,28 +101,28 @@ function ExDialog() {
     }
 
     return (
-        <div className="fixed top-10 inset-x-[20%] mx-auto min-w-[50%] min-h-min rounded-md bg-slate-700 opacity-75 text-white text-center z-[1200]">
-            <h1 className="text-3xl font-bold underline pt-4">
+        <div className="seelie-fixed seelie-top-10 seelie-inset-x-[20%] seelie-mx-auto seelie-min-w-[50%] seelie-min-h-min seelie-rounded-md seelie-bg-slate-700 seelie-opacity-75 seelie-text-white seelie-text-center seelie-z-[1200]">
+            <h1 className="seelie-text-3xl seelie-font-bold seelie-underline seelie-pt-4">
                 SeelieEX
             </h1>
-            <h2 className="text-xl font-bold underline pt-4">
-                本脚本与原网页样式冲突,不使用时可以临时禁用脚本
+            <h2 className="seelie-text-xl seelie-font-bold seelie-underline seelie-pt-4">
+                绝区零规划助手扩展
             </h2>
-            <div className="w-full p-4">
-                <div className="w-full max-w-md p-2 mx-auto bg-purple rounded-2xl">
+            <div className="seelie-w-full seelie-p-4">
+                <div className="seelie-w-full seelie-max-w-md seelie-p-2 seelie-mx-auto seelie-bg-purple seelie-rounded-2xl">
                     <Disclosure>
                         {({open}) => (
                             <>
                                 <Disclosure.Button
-                                    className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-slate-900 bg-purple-100 rounded-lg hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
+                                    className="seelie-flex seelie-justify-between seelie-w-full seelie-px-4 seelie-py-2 seelie-text-sm seelie-font-medium seelie-text-left seelie-text-slate-900 seelie-bg-purple-100 seelie-rounded-lg hover:seelie-bg-purple-200 focus:seelie-outline-none focus-visible:seelie-ring focus-visible:seelie-ring-purple-500 focus-visible:seelie-ring-opacity-75">
                                     <span>角色信息同步</span>
                                     <ChevronUpIcon
                                         className={`${
-                                            open ? 'transform rotate-180' : ''
-                                        } w-5 h-5 text-purple-500`}
+                                            open ? 'seelie-transform seelie-rotate-180' : ''
+                                        } seelie-w-5 seelie-h-5 seelie-text-purple-500`}
                                     />
                                 </Disclosure.Button>
-                                <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-white-500">
+                                <Disclosure.Panel className="seelie-px-4 seelie-pt-4 seelie-pb-2 seelie-text-sm seelie-text-white-500">
                                     {/*<div className="flex pt-4">*/}
                                     {/*    <div className="w-1/2 text-white-900">*/}
                                     {/*        区服选择:*/}
@@ -135,18 +135,18 @@ function ExDialog() {
                                     {/*        labelRight={'国际服'}*/}
                                     {/*    />*/}
                                     {/*</div>*/}
-                                    <div className="flex pt-2">
-                                        <div className="w-full">
-                                            <button className="text-white bg-blue-500 px-4 py-2"
+                                    <div className="seelie-flex seelie-pt-2">
+                                        <div className="seelie-w-full">
+                                            <button className="seelie-text-white seelie-bg-blue-500 seelie-px-4 seelie-py-2 seelie-rounded hover:seelie-bg-blue-600"
                                                     onClick={getAccountList}>获取账户信息
                                             </button>
                                         </div>
                                     </div>
-                                    <div className="flex pt-4">
-                                        <div className="w-1/2 text-white-900">
+                                    <div className="seelie-flex seelie-pt-4">
+                                        <div className="seelie-w-1/2 seelie-text-white-900">
                                             账户选择:
                                         </div>
-                                        <div className="w-1/2">
+                                        <div className="seelie-w-1/2">
                                             <ListboxSelect
                                                 selected={currentAccount ? accountList.indexOf(currentAccount) : 0}
                                                 setSelected={handleRoleSelectChange}
@@ -155,9 +155,9 @@ function ExDialog() {
                                             />
                                         </div>
                                     </div>
-                                    <div className="flex pt-2">
-                                        <div className="w-full">
-                                            <button className="text-white bg-blue-500 px-4 py-2"
+                                    <div className="seelie-flex seelie-pt-2">
+                                        <div className="seelie-w-full">
+                                            <button className="seelie-text-white seelie-bg-blue-500 seelie-px-4 seelie-py-2 seelie-rounded hover:seelie-bg-blue-600"
                                                     onClick={syncCharacterInfo}>同步mihoyo角色信息
                                             </button>
                                         </div>
@@ -166,31 +166,31 @@ function ExDialog() {
                             </>
                         )}
                     </Disclosure>
-                    <Disclosure as="div" className="mt-2">
+                    <Disclosure as="div" className="seelie-mt-2">
                         {({open}) => (
                             <>
                                 <Disclosure.Button
-                                    className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-slate-900 bg-purple-100 rounded-lg hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
+                                    className="seelie-flex seelie-justify-between seelie-w-full seelie-px-4 seelie-py-2 seelie-text-sm seelie-font-medium seelie-text-left seelie-text-slate-900 seelie-bg-purple-100 seelie-rounded-lg hover:seelie-bg-purple-200 focus:seelie-outline-none focus-visible:seelie-ring focus-visible:seelie-ring-purple-500 focus-visible:seelie-ring-opacity-75">
                                     <span>规划批量操作</span>
                                     <ChevronUpIcon
                                         className={`${
-                                            open ? 'transform rotate-180' : ''
-                                        } w-5 h-5 text-purple-500`}
+                                            open ? 'seelie-transform seelie-rotate-180' : ''
+                                        } seelie-w-5 seelie-h-5 seelie-text-purple-500`}
                                     />
                                 </Disclosure.Button>
-                                <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-white-500">
+                                <Disclosure.Panel className="seelie-px-4 seelie-pt-4 seelie-pb-2 seelie-text-sm seelie-text-white-500">
                                     <Tab.Group>
-                                        <Tab.List className="flex p-1 space-x-1 bg-blue-900/20 rounded-xl">
+                                        <Tab.List className="seelie-flex seelie-p-1 seelie-space-x-1 seelie-bg-blue-900/20 seelie-rounded-xl">
                                             {['角色目标等级', '天赋目标等级', '武器目标等级'].map((category) => (
                                                 <Tab
                                                     key={category}
                                                     className={({selected}) =>
                                                         classNames(
-                                                            'w-full py-2.5 text-sm leading-5 font-medium text-blue-700 rounded-lg',
-                                                            'focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60',
+                                                            'seelie-w-full seelie-py-2.5 seelie-text-sm seelie-leading-5 seelie-font-medium seelie-text-blue-700 seelie-rounded-lg',
+                                                            'focus:seelie-outline-none focus:seelie-ring-2 seelie-ring-offset-2 seelie-ring-offset-blue-400 seelie-ring-white seelie-ring-opacity-60',
                                                             selected
-                                                                ? 'bg-white shadow'
-                                                                : 'text-blue-100 hover:bg-white/[0.12] hover:text-white'
+                                                                ? 'seelie-bg-white seelie-shadow'
+                                                                : 'seelie-text-blue-100 hover:seelie-bg-white/[0.12] hover:seelie-text-white'
                                                         )
                                                     }
                                                 >

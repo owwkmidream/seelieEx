@@ -29,20 +29,20 @@ function CharacterGoalTab(props: IProps) {
     }
 
     return <div>
-        <div className="flex pt-4">
+        <div className="seelie-flex seelie-pt-4">
             <ToggleSwitch
-                className='w-full'
+                className='seelie-w-full'
                 checked={selectAllRoles}
                 onChange={setSelectAllRoles}
                 labelLeft={`全部${showText}`}
                 labelRight={`仅激活${showText}`}
             />
         </div>
-        <div className="flex pt-4">
-            <div className="w-1/2 text-white-900">
+        <div className="seelie-flex seelie-pt-4">
+            <div className="seelie-w-1/2 seelie-text-white-900">
                 {showText}目标等级:
             </div>
-            <div className="w-1/2">
+            <div className="seelie-w-1/2">
                 <ListboxSelect
                     selected={characterLevelGoal}
                     setSelected={setCharacterLevelGoal}
@@ -51,9 +51,9 @@ function CharacterGoalTab(props: IProps) {
                 />
             </div>
         </div>
-        <div className="flex pt-2">
-            <div className="w-full">
-                <button className="text-white bg-blue-500 px-4 py-2"
+        <div className="seelie-flex seelie-pt-2">
+            <div className="seelie-w-full">
+                <button className="seelie-text-white seelie-bg-blue-500 seelie-px-4 seelie-py-2 seelie-rounded hover:seelie-bg-blue-600"
                         onClick={batchSetCharacterGoalLevel}>批量设置{showText}目标等级
                 </button>
             </div>

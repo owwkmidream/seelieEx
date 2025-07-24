@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import './App.css';
+import './isolated-styles.css';
 import ExDialog from "./components/SeelieExDialog";
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
     })
 
     return (
-        <div className="App" style={{display: showExDialog ? "" : "none"}}>
+        <div className="seelie-App" style={{display: showExDialog ? "" : "none"}}>
             <ExDialog/>
         </div>
     );

@@ -1,4 +1,68 @@
-@tailwind base;
+/* 移除 @tailwind base; 避免全局样式污染 */
 @tailwind components;
 @tailwind utilities;
+
+/* 为 SeelieEx 创建独立的样式作用域 */
+#seelieEx {
+  /* 完全隔离样式，避免继承外部样式 */
+  all: initial;
+  
+  /* 重新设置基础样式 */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  
+  /* 确保容器正常显示 */
+  display: block;
+  position: relative;
+  z-index: 1200;
+}
+
+#seelieEx *,
+#seelieEx *::before,
+#seelieEx *::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb;
+}
+
+#seelieEx * {
+  /* 重置所有元素的样式 */
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+}
+
+/* 确保按钮和输入框正常显示 */
+#seelieEx button,
+#seelieEx input,
+#seelieEx select,
+#seelieEx textarea {
+  font-family: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  margin: 0;
+}
+
+#seelieEx button {
+  cursor: pointer;
+  background-color: transparent;
+  background-image: none;
+  text-transform: none;
+}
+
+#seelieEx button:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
 

@@ -13,24 +13,24 @@ function ToggleSwitch(props: IProps) {
 
     const {className, checked, onChange, labelLeft, labelRight} = props;
 
-    return <div className={`${className} flex flex-row`}>
-        <div className='w-1/4'>{labelLeft}</div>
-        <div className='w-1/2'>
+    return <div className={`${className} seelie-flex seelie-flex-row`}>
+        <div className='seelie-w-1/4'>{labelLeft}</div>
+        <div className='seelie-w-1/2'>
             <Switch
                 checked={checked}
                 onChange={onChange}
                 className={`${
-                    checked ? 'bg-blue-600' : 'bg-gray-200'
-                } relative inline-flex items-center h-6 rounded-full w-11`}
+                    checked ? 'seelie-bg-blue-600' : 'seelie-bg-gray-200'
+                } seelie-relative seelie-inline-flex seelie-items-center seelie-h-6 seelie-rounded-full seelie-w-11`}
             >
                 <span
                     className={`${
-                        checked ? 'translate-x-6' : 'translate-x-1'
-                    } inline-block w-4 h-4 transform bg-white rounded-full`}
+                        checked ? 'seelie-translate-x-6' : 'seelie-translate-x-1'
+                    } seelie-inline-block seelie-w-4 seelie-h-4 seelie-transform seelie-bg-white seelie-rounded-full`}
                 />
             </Switch>
         </div>
-        <div className='w-1/4'>{labelRight}</div>
+        <div className='seelie-w-1/4'>{labelRight}</div>
     </div>
 
 }
