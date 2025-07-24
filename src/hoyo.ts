@@ -4,7 +4,7 @@ import Character = mihoyo.Character;
 import CharacterDataEx = mihoyo.CharacterDataEx;
 
 // 绝区零 API
-const BBS_URL = 'https://webstatic.mihoyo.com/nap/event/e20240701preview/index.html'
+const BBS_URL = 'https://act.mihoyo.com/zzz/gt/character-builder-h/index.html'
 const ROLE_URL = 'https://api-takumi.mihoyo.com/binding/api/getUserGameRolesByCookie?game_biz=nap_cn'
 const CHARACTERS_URL = 'https://act-api-takumi.mihoyo.com/event/nap_cultivate_tool/user/avatar_basic_list'
 const CHARACTERS_DETAIL_URL = 'https://act-api-takumi.mihoyo.com/event/nap_cultivate_tool/user/batch_avatar_detail_v2'

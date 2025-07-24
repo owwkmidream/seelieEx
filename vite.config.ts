@@ -10,7 +10,7 @@ export default defineConfig({
         monkeyPlugin({
             entry: 'src/index.tsx',
             userscript: {
-                author: 'KeyPJ',
+                author: 'Owwkmidream',
                 name: {
                     '': pkg.name,
                     'zh': '绝区零规划助手扩展',
@@ -18,23 +18,23 @@ export default defineConfig({
                 description: {
                     'zh': '绝区零规划助手扩展，自动从米游社获取角色信息并导入至绝区零seelie规划工具'
                 },
-                namespace: 'https://github.com/KeyPJ/seelieEx',
+                namespace: 'https://github.com/Owwkmidream/seelieEx',
                 version: pkg.version,
                 include: ["https://zzz.seelie.me/*"],
                 grant: ['unsafeWindow', 'GM.xmlHttpRequest', 'GM_xmlhttpRequest', 'GM_openInTab', 'GM_getResourceText', "GM_registerMenuCommand"],
                 $extra: [
-                    ['copyright', '2021, KeyPJ https://github.com/KeyPJ'],
+                    ['copyright', '2025, Owwkmidream https://github.com/Owwkmidream'],
                 ],
                 license: 'MIT',
-                contributionURL: 'https://github.com/KeyPJ/seelieEx',
-                connect: ['api-takumi.mihoyo.com', 'public-data-api.mihoyo.com'],
+                contributionURL: 'https://github.com/Owwkmidream/seelieEx',
+                connect: ['api-takumi.mihoyo.com', 'act-api-takumi.mihoyo.com'],
                 resource: {
-                    zzz_character: "https://ghproxy.com/https://raw.githubusercontent.com/KeyPJ/seelieEx/main/src/data/zzz_character.json",
-                    zzz_weapon: "https://ghproxy.com/https://raw.githubusercontent.com/KeyPJ/seelieEx/main/src/data/zzz_weapon.json"
+                    zzz_character: "https://ghproxy.com/https://raw.githubusercontent.com/Owwkmidream/seelieEx/main/src/data/zzz_character.json",
+                    zzz_weapon: "https://ghproxy.com/https://raw.githubusercontent.com/Owwkmidream/seelieEx/main/src/data/zzz_weapon.json"
                 },
                 "run-at": "document-end",
-                homepage: "https://github.com/KeyPJ",
-                homepageURL: "https://github.com/KeyPJ/seelieEx",
+                homepage: "https://github.com/Owwkmidream",
+                homepageURL: "https://github.com/Owwkmidream/seelieEx",
                 updateURL: "https://greasyfork.org/scripts/443664-genshinseelieex/code/genshinSeelieEx.user.js"
             },
             build: {

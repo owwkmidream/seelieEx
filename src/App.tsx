@@ -9,7 +9,7 @@ function App() {
     useEffect(() => {
         GM_registerMenuCommand("打开SeelieEx", () => setShowExDialog(true))
         GM_registerMenuCommand("关闭SeelieEx", () => setShowExDialog(false))
-        GM_registerMenuCommand("意见反馈", () => GM_openInTab("https://github.com/KeyPJ/seelieEx/issues"))
+        GM_registerMenuCommand("意见反馈", () => GM_openInTab("https://github.com/Owwkmidream/seelieEx/issues"))
     })
 
     return (
