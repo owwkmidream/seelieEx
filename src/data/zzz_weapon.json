@@ -144,6 +144,10 @@
 		"name": "幻变魔方"
 	},
 	{
+		"id": "cordis_germina",
+		"name": "机巧心种"
+	},
+	{
 		"id": "cannon_rotor",
 		"name": "加农转子"
 	},
@@ -246,6 +250,10 @@
 	{
 		"id": "unfettered_game_ball",
 		"name": "逍遥游球"
+	},
+	{
+		"id": "bellicose_blaze",
+		"name": "嚣枪喧焰"
 	},
 	{
 		"id": "heartstring_nocturne",

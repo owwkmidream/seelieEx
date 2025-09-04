@@ -8,6 +8,10 @@
 		"name": "「扳机」"
 	},
 	{
+		"id": "seed",
+		"name": "「席德」"
+	},
+	{
 		"id": "ellen",
 		"name": "艾莲"
 	},
@@ -22,6 +26,10 @@
 	{
 		"id": "anton",
 		"name": "安东"
+	},
+	{
+		"id": "orphie",
+		"name": "奥菲丝&「鬼火」"
 	},
 	{
 		"id": "burnice",
